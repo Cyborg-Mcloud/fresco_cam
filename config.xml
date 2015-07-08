@@ -27,7 +27,7 @@
 <preference name="fullscreen" value="true" />
    
     <plugins>
-<gap:plugin name="org.apache.cordova.camera" />
+
     </plugins>
 	<feature name="App">
 	  <param name="android-package" value="com.designge.frescocam"/>
@@ -38,6 +38,6 @@
 </feature>
 
 	<feature name="http://api.phonegap.com/1.0/camera"/>
-
+<gap:plugin name="org.apache.cordova.camera" />
 
 </widget>
