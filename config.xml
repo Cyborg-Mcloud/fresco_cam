@@ -58,6 +58,6 @@
 <feature name="http://api.phonegap.com/1.0/notification" />
 <feature name="http://api.phonegap.com/1.0/device" />
 
-<!--<gap:plugin name="org.apache.cordova.camera" />-->
+<gap:plugin name="org.apache.cordova.camera" />
 
 </widget>
