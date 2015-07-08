@@ -16,7 +16,13 @@
     // device APIs are available
     //
     function onDeviceReady() {
-		notification.alert("loaded");
+navigator.notification.alert(
+    'You are the winner!',  // message
+    alertDismissed,         // callback
+    'Game Over',            // title
+    'Done'                  // buttonName
+);
+
 //        pictureSource=navigator.camera.PictureSourceType;
   //      destinationType=navigator.camera.DestinationType;
     }
