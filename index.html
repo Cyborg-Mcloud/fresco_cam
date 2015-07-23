@@ -101,6 +101,26 @@ console.log("movedi");
 
 	</div>
 
+	<div id="slide_2" style='width:100%;height:100%; visibility:visible; position:absolute; left:0px; top:0px;'>
+		<img src='header.jpg' width='100%'>
+		<table>
+			<tr>
+			<td align=center valign=middle><img src='uname_img.png'></td><td><input type='text' style='border:0px;' placeholder="სახელი გვარი"></d>
+			</tr>
+			<tr><td>&nbsp;</td><td></td></tr>
+			<td align=center valign=middle><img src='eml_img.png'></td><td><input type='text' style='border:0px;' placeholder="ელ. ფოსტა"></d>
+			</tr>
+			<tr><td>&nbsp;</td><td></td></tr>
+			<td align=center valign=middle><img src='persid_img.png'></td><td><input type='text' style='border:0px;' placeholder="პირადი ნომერი"></d>
+			</tr>
+			<tr><td>&nbsp;</td><td></td></tr>
+		</table>
+		<center><a href='regme();'><img src='reg_but.png'></a><br>
+		ან<br>
+		<a href='fblogin();'><img src='fb_login.png'></a></center>
+
+	</div>
+
 <div id="slide_3" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;'>
     <button onclick="capturePhoto();">Capture Photo</button> <br>
     <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
@@ -116,14 +136,27 @@ var curslide=1;
 
 var timecounter=0;
 
-function mainfunc()
+function startfunc()
 	{
 	if (curslide==1)
 		{timecounter+=1;
 		if (timecounter>3)
 			{change_slide(2);}
-		setTimeout("mainfunc();",1000);
+		else
+			{
+			setTimeout("startfunc();",1000);
+			}
 		}
+	}
+
+function regme()
+	{
+	change_slide(3);
+	}
+
+function fblogin()
+	{
+	change_slide(3);
 	}
 
 function change_slide(newslide)
@@ -134,7 +167,7 @@ function change_slide(newslide)
 
 }
 
-setTimeout("mainfunc();",1000);
+setTimeout("startfunc();",1000);
 
 </script>
   </body>
