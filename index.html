@@ -96,13 +96,45 @@ console.log("movedi");
     </script>
   </head>
   <body>
+	<div id="slide_1" style='width:100%;height:100%; visbility:visible; position:absolute; left:0px; top:0px;'>
+		<img src='slide_1.jpg' width='100%'>
+
+	</div>
+
+<div id="slide_3" style='width:100%;height:100%; visbility:hidden; position:absolute; left:0px; top:0px;'>
     <button onclick="capturePhoto();">Capture Photo</button> <br>
     <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
     <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
     <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
     <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
     <img style="display:none;" id="largeImage" src="" />
+</div>
 
+<script>
 
+var curslide=1;
+
+var timecounter=0;
+
+function mainfunc()
+	{
+	if (curslide==1)
+		{timecounter+=1;
+		if (timecounter>3)
+			{change_slide(2);}
+		}
+	}
+
+function change_slide(newslide)
+{
+	document.getElementById("slide_"+curslide).style.visibility="hidden";
+	curslide=newslide;
+	document.getElementById("slide_"+curslide).style.visibility="visible";
+
+}
+
+setTimeout("mainfunc();",1000);
+
+</script>
   </body>
 </html>
