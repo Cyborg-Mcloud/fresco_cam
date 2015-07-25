@@ -94,6 +94,9 @@ console.log("movedi");
     }
 
     </script>
+	<style>
+input {height:30px; width:150px;}
+	</style>
   </head>
   <body>
 	<div id="slide_1" style='width:100%;height:100%; visibility:visible; position:absolute; left:0px; top:0px;'>
@@ -123,12 +126,19 @@ console.log("movedi");
 
 	</div>
 
-<div id="slide_3" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;'>
-<br><br><br><br><br><br>
-	<center><a href="Javascript: capturePhoto();">გადაიღე სურათი</a> &nbsp;&nbsp;
-    <a href="Javascript: getPhoto(pictureSource.PHOTOLIBRARY);">აირჩიე ფოტო</a></center>
-    <img style="display:none;" id="largeImage" src="" />
-</div>
+	<div id="slide_3" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;'>
+	<img src='white_logo.png' width=100%>
+		<img style="display:none;" id="largeImage" src="" width=100%/>
+
+	<div style='position:absolute; left:0px; bottom:0px;' width=100%>
+		<img src='grn_footer.png' width=100% style='position:absolute; left:0px; top:0px;'>
+		<center><a href="Javascript: capturePhoto();">გადაიღე სურათი</a> &nbsp;&nbsp;
+		<a href="Javascript: getPhoto(pictureSource.PHOTOLIBRARY);">აირჩიე ფოტო</a></center>
+	</div>
+	
+		
+
+	</div>
 
 <script>
 
