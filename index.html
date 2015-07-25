@@ -99,7 +99,7 @@ console.log("movedi");
     function onFail(message) {
       alert('Failed because: ' + message);
     }
-
+document.addEventListener('touchmove', function(e) { e.preventDefault(); }, false);
     </script>
 	<style>
 input {height:30px; width:150px;}

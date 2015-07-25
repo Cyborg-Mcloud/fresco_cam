@@ -25,7 +25,9 @@
 <preference name="phonegap-version" value="3.7.0" /> 
 <preference name="orientation" value="portrait" />
 <preference name="fullscreen" value="true" />
-   
+<preference name="webviewbounce" value="false" />  
+<preference name="DisallowOverscroll" value="true" />
+
     <plugins>
 
     </plugins>
