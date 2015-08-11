@@ -2,13 +2,13 @@
 
 <widget xmlns     = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.designge.frescocam"
+        id        = "com.designge.dresco"
 	    versionCode="57" 
         version   = "1.0.1"
-		package="com.designge.frescocam"
+		package="com.designge.dresco"
 		>
-    <name>FrescoCam</name>
-	<icon src="logo.png" />
+    <name>Dresco</name>
+	<icon src="icon.png" />
     <description>
       asdasd
     </description>
@@ -32,7 +32,7 @@
 
     </plugins>
 	<feature name="App">
-	  <param name="android-package" value="com.designge.frescocam"/>
+	  <param name="android-package" value="com.designge.dresco"/>
 	</feature>
 
     <feature name="Camera">
