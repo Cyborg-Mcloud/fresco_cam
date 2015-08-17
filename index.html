@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Capture Photo</title>
+    <title>Dresco</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="apple-touch-icon" href="icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Fresco App">
 <meta name="mobile-web-app-capable" content="yes">
@@ -26,13 +26,16 @@
         destinationType=navigator.camera.DestinationType;
     }
 
-
+   // function onPhotoDataSuccess() {
     function onPhotoDataSuccess(imageData) {
-      console.log(imageData);
+     // console.log(imageData);
 
 
 	   largeImage.style.display = 'block';
        largeImage.src  = "data:image/jpeg;base64," + imageData;
+	//   largeImage.src ="sample.JPG";
+	   	setTimeout("redraw();", 1000);
+		console.log("drawing");
     }
 
  
@@ -43,24 +46,24 @@
       largeImage.src = imageURI;
 
 	  
-	setTimeout("redraw();", 1000);
+
     }
 
 function redraw()
 {
 ctx.save(); 
-	ctx.translate(180, 300); 
-	ctx.rotate(3.14); 
-	ctx.drawImage(largeImage, -180, -300, 600, 355); 
+	ctx.translate(355, 0); 
+	ctx.rotate(3.14/2); 
+	ctx.drawImage(largeImage, 0, 0, 600, 355); 
 	ctx.restore();
-		setTimeout("redraw();", 1000);
+	setTimeout("redraw();", 1000);
 }
 
 
     function capturePhoto() {
-
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-        destinationType: destinationType.DATA_URL });
+//onPhotoDataSuccess();
+//console.log("ager");
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: destinationType.DATA_URL });
     }
 
     function capturePhotoEdit() {
@@ -102,14 +105,14 @@ input {height:30px; width:150px;}
   <body>
 	  <div style='height:600px; width:100%;'>
 		<div id="slide_1" style='width:100%;height:100%; visibility:visible; position:absolute; left:0px; top:0px;'>
-			<img src='slide_1.jpg' width='100%'>
+			<img src='slide_1.png' width='100%'>
 
 		</div>
 
 		<div id="slide_2" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;'>
 			<img src='header.png' width='100%'>
 			<center>
-			<table>
+			<table border=0 cellspacing=0 cellpadding=0 width=100%>
 				<tr>
 				<td align=center valign=middle width=60px><img src='uname_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="სახელი გვარი"></d>
 				</tr>
@@ -118,6 +121,19 @@ input {height:30px; width:150px;}
 				</tr>
 				<tr><td>&nbsp;</td><td></td></tr>
 				<td align=center valign=middle><img src='persid_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="პირადი ნომერი"></d>
+				</tr>
+				<tr><td>&nbsp;</td><td></td></tr>
+					<td align=center valign=middle><img src='gender_img.png'></td>
+					<td valign=left valign=middle style='color:#1d1d26; font-size:12px;'>
+					
+
+						<table border=0><tr>
+						<td valign=middle align=right width=20px><input type='radio'  name='mysex' id='mysex' value='1' checked style='width:20px;'></td>
+						<td valign=middle align=left style='color:#5e5e5e; font-size:12px;'>მდედრობითი</td>
+						<td valign=middle align=right width=20px><input type='radio'  name='mysex' id='mysex' value='2'  style='width:20px;'></td>
+						<td valign=middle align=left style='color:#5e5e5e; font-size:12px;'>მამრობითი</td>
+						</tr></table>
+					</td>
 				</tr>
 				<tr><td>&nbsp;</td><td></td></tr>
 			</table>
@@ -129,19 +145,285 @@ input {height:30px; width:150px;}
 		</div>
 
 		<div id="slide_3" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;'>
-		<img src='white_logo.png' width=100%>
-		<canvas name='mycan' id='mycan' width=100% height=100% style='width:100%; height:100%;'></canvas>
+			<img src='white_logo.png' width=100% style='position:absolute; left:0px; top:0px;'>
+			
+
+			<canvas name='mycan' id='mycan' width=355 height=600 style='border:1px solid red; width:100%; height:100%;'></canvas>
+
+			<div style='position:absolute; left:0px; top:28px; background-color:white; text-align:center; width:100%;'>
+				<table width=100% border=0 cellspacing=0 cellpadding=0> 
+					<tr><td valign=middle width=30px><a href='Javascript: bpartleft();' style='display:block; vertical-align:middle;  text-align:center; width:30px; height:22px; padding-top:8px;'><img src='left_but.png'></a></td>
+					<td  valign=top align=center>
+					
+						<div style='position:relative; width:210px; height:33px; margin:0px padding:0px; overflow:hidden;  '>
+							<div id='bpart_sel' style='position:absolute; left:0px; top:5px;  '>
+								<table border=0 cellspacing=0 cellpadding=0 width=440px>
+									<tr>
+									<td valign=middle width=110px align=center>სრული ტანი</td>
+									<td width=110px align=center  valign=middle>ზედა სამოსი</td>
+									<td width=110px align=center valign=middle>ქვედა სამოსი</td>
+									<td width=110px align=center valign=middle>ფეხსაცმელი</td>
+									</tr>
+								</table>
+							</div>
+							<img src='white_overlay.png' style=' width:100%; height:30px; position:absolute; left:0px; top:0px;'>
+						</div>
+					</td>
+					<td valign=middle  width=30px><a href='Javascript: bpartright();' style='display:block; text-align:center; vertical-align:middle;  height:22px; padding-top:8px; width:30px;  '><img src='right_but.png'></a></td>
+					</tr></table>
+
+			</div>
 
 			<img style="display:none;" id="largeImage" src="" width=100%/>
+				<a href="Javascript: savedress();" style='position:absolute; right:15px; top:75px;   '><img src='save_but.png'></a>			
 
 			<div style='position:absolute; left:0px; bottom:0px; height:78px; width:100%; background:URL(grn_footer.png);'>
-			
-				<a href="Javascript: capturePhoto();" style='position:absolute; left:143px; top:3px; height:75px; width:75px;  border:1px solid red;'></a>
-				<a href="Javascript: getPhoto(pictureSource.PHOTOLIBRARY);"  style='position:absolute; right:5px; top:5px; height:70px; width:70px;  border:1px solid red;'></a></center>
+				<a href="Javascript: showprops();" style='position:absolute; left:5px; top:3px; height:70px; width:75px;  '></a>			
+				<a href="Javascript: capturePhoto();" style='position:absolute; left:143px; top:3px; height:70px; width:75px;  '></a>
+				<a href="Javascript: getPhoto(pictureSource.PHOTOLIBRARY);"  style='position:absolute; right:5px; top:5px; height:70px; width:70px;  '></a></center>
+				
+			</div>
+
+				<div id="slide_4" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;'>
+			<img src='white_logo.png' width=100% style='position:absolute; left:0px; top:0px;'>
+			<img id='testimg' width=200px>
+			</div>
+
+			<div style='position:absolute; left:0px; top:0px; width:100%; height:100%; display:none;' id='propsover'>
+
+				<div style='position:absolute; left:0px; top:0px; width:100%; height:100%; background-color:black; filter:alpha(opacity=70); opacity:0.7; z-index:80;'></div>
+				
+				<a href='Javascript: closeprops();' style='position:absolute; right:18px; top:17px;  z-index:81;' ><img src='close_but.png' width=30px></a>
+				
+				<div style='position:absolute; top:12%; left:5%; width:90%; height:75%; background-color:#ffffff; z-index:82; '>
+					<div style='width:87%; height:90%; margin:20px; '>
+						<Br>
+						<img src='style_txt.png'>
+						<table width=100% border=0 cellspacing=0 cellpadding=0>
+							<tr><td valign=middle width=30px><a href='Javascript: styleleft();' style='display:block; vertical-align:middle;  text-align:center; width:30px; height:22px; padding-top:8px;'><img src='left_but.png'></a></td>
+							<td  valign=top align=center>
+							
+								<div style='position:relative; width:210px; height:33px; margin:0px padding:0px; overflow:hidden;  '>
+									<div id='style_sel' style='position:absolute; left:0px; top:0px;  '>
+										<table border=0 cellspacing=0 cellpadding=0 width=440px>
+											<tr>
+											<td valign=middle width=110px align=center>კლასიკური</td>
+											<td width=110px align=center  valign=middle>სპორტული</td>
+											<td width=110px align=center valign=middle>თავისუფალი</td>
+											<td width=110px align=center valign=middle>საცურაო</td>
+											</tr>
+										</table>
+									</div>
+									<img src='white_overlay.png' style=' width:100%; height:30px; position:absolute; left:0px; top:0px;'>
+								</div>
+							</td>
+							<td valign=middle  width=30px><a href='Javascript: styleright();' style='display:block; text-align:center; vertical-align:middle;  height:22px; padding-top:8px; width:30px;  '><img src='right_but.png'></a></td>
+							</tr></table>
+							<br>
+							<br>
+						<img src='feri_txt.png'>
+						<table width=100% border=0 cellspacing=0 cellpadding=0>
+							<tr><td valign=middle width=30px><a href='Javascript: ferileft();' style='display:block; vertical-align:middle;  text-align:center; width:30px; height:22px; padding-top:8px;'><img src='left_but.png'></a></td>
+							<td  valign=top align=center>
+							
+								<div style='position:relative; width:210px; height:33px; margin:0px padding:0px; overflow:hidden;  '>
+									<div id='feri_sel' style='position:absolute; left:0px; top:0px;  '>
+										<table border=0 cellspacing=0 cellpadding=0 width=540px>
+											<tr>
+											<td valign=middle width=90px align=center>შავი</td>
+											<td width=90px align=center  valign=middle>თეთრი</td>
+											<td width=90px align=center valign=middle>წითელი</td>
+											<td width=90px align=center valign=middle>ლურჯი</td>
+											<td width=90px align=center valign=middle>მწვანე</td>
+											<td width=90px align=center valign=middle>იასამნისფერი</td>
+
+											</tr>
+										</table>
+									</div>
+									<img src='white_overlay.png' style=' width:100%; height:30px; position:absolute; left:0px; top:0px;'>
+								</div>
+							</td>
+							<td valign=middle  width=30px><a href='Javascript: feriright();' style='display:block; text-align:center; vertical-align:middle;  height:22px; padding-top:8px; width:30px;  '><img src='right_but.png'></a></td>
+							</tr></table>
+						<br>
+						<br>
+						<img src='temp_txt.png'>
+						<table width=100% border=0 cellspacing=0 cellpadding=0>
+							<tr><td valign=middle width=30px><a href='Javascript: templeft();' style='display:block; vertical-align:middle;  text-align:center; width:30px; height:22px; padding-top:8px;'><img src='left_but.png'></a></td>
+							<td  valign=top align=center>
+							
+								<div style='position:relative; width:210px; height:33px; margin:0px padding:0px; overflow:hidden;  '>
+									<div id='temp_sel' style='position:absolute; left:0px; top:0px;  '>
+										<table border=0 cellspacing=0 cellpadding=0 width=450px>
+											<tr>
+											<td valign=middle width=90px align=center>ყინვა</td>
+											<td width=90px align=center  valign=middle>სიცივე</td>
+											<td width=90px align=center valign=middle>საშუალო</td>
+											<td width=90px align=center valign=middle>სითბო</td>
+											<td width=90px align=center valign=middle>სიცხე</td>
+											</tr>
+										</table>
+									</div>
+									<img src='white_overlay.png' style=' width:100%; height:30px; position:absolute; left:0px; top:0px;'>
+								</div>
+							</td>
+							<td valign=middle  width=30px><a href='Javascript: tempright();' style='display:block; text-align:center; vertical-align:middle;  height:22px; padding-top:8px; width:30px;  '><img src='right_but.png'></a></td>
+							</tr></table>
+							<br><br>
+							<center>	<a href="Javascript: closeprops();" ><img src='but_save.png'></a>			</center>
+
+					</div>
+				
+				</div>
+
 			</div>
 		</div>
 	</div>
+
 <script>
+
+var gamehttp;
+var c_recv;
+
+
+if (window.XMLHttpRequest) {gamehttp=new XMLHttpRequest();}
+else if (window.ActiveXObject) {gamehttp=new ActiveXObject('Microsoft.XMLHTTP');}
+else {alert('Your browser does not support XMLHTTP!');}
+gamehttp.onreadystatechange=recv_ans;
+
+
+function recv_ans()
+	{
+	if (gamehttp.readyState==4 && gamehttp.status==200)
+		{
+		c_recv=gamehttp.responseText;
+		if (c_recv!="")
+			{
+			if (curslide==3)
+				{
+				change_slide(4);
+				}
+			}
+		}
+	}
+
+function savedress()
+	{
+	var img1    = c.toDataURL("image/png");
+	url='http://design.ge/fresco/upload_dress.php?saveme=123';
+	gamehttp.open('POST',url,true);
+	gamehttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	var sendstr="color="+selcolor;
+	 sendstr+="&temp="+seltemp;
+	 sendstr+="&style="+selstyle;
+	 sendstr+="&bpart="+selbpart;
+	sendstr+="&myid=1";
+	 sendstr+="&img="+img1;
+
+	gamehttp.send(sendstr);
+
+
+
+	}
+
+function focussel(divname, cellwidth, selid)
+	{
+//	alert(divname+ " - " + cellwidth + " - " +selid);
+	document.getElementById(divname).style.left=(105-(selid*cellwidth-cellwidth/2))+"px";
+
+	}
+
+function styleright()
+	{
+	if (selstyle<maxstyle)
+		{
+		selstyle+=1;
+		focussel("style_sel",stylewidth, selstyle);
+		}
+	}
+
+function styleleft()
+	{
+	if (selstyle>1)
+		{
+		selstyle-=1;
+		focussel("style_sel",stylewidth, selstyle);
+		}
+	}
+
+
+function feriright()
+	{
+	if (selcolor<maxcolor)
+		{
+		selcolor+=1;
+		focussel("feri_sel",colwidth, selcolor);
+		}
+	}
+
+function ferileft()
+	{
+	if (selcolor>1)
+		{
+		selcolor-=1;
+		focussel("feri_sel",colwidth, selcolor);
+		}
+	}
+
+
+function bpartright()
+	{
+	if (selbpart<maxbpart)
+		{
+		selbpart+=1;
+		focussel("bpart_sel",bpartwidth, selbpart);
+		}
+	}
+
+function bpartleft()
+	{
+	if (selbpart>1)
+		{
+		selbpart-=1;
+		focussel("bpart_sel",bpartwidth, selbpart);
+		}
+	}
+
+
+function tempright()
+	{
+	if (seltemp<maxtemp)
+		{
+		seltemp+=1;
+		focussel("temp_sel",tempwidth, seltemp);
+		}
+	}
+
+function templeft()
+	{
+	if (seltemp>1)
+		{
+		seltemp-=1;
+		focussel("temp_sel",tempwidth, seltemp);
+		}
+	}
+
+
+var bpartwidth=110;
+var stylewidth=110;
+var colwidth=90;
+var tempwidth=90;
+var maxcolor=6;
+var maxtemp=5;
+var maxstyle=4;
+var maxbpart=4;
+
+var selbpart=1;
+var selstyle=1;
+var selcolor=1;
+var seltemp=1;
+
+
 
 var c = document.getElementById("mycan");
 var ctx = c.getContext("2d");
@@ -154,7 +436,7 @@ function startfunc()
 	{
 	if (curslide==1)
 		{timecounter+=1;
-		if (timecounter>3)
+		if (timecounter>0)
 			{change_slide(2);}
 		else
 			{
@@ -178,8 +460,26 @@ function change_slide(newslide)
 	document.getElementById("slide_"+curslide).style.visibility="hidden";
 	curslide=newslide;
 	document.getElementById("slide_"+curslide).style.visibility="visible";
-
+	if (curslide==3)
+		{
+		focussel("bpart_sel",bpartwidth, selbpart);
+		}
 }
+
+function showprops()
+	{
+	document.getElementById("propsover").style.display="inline";
+
+	focussel("style_sel",stylewidth, selstyle);
+	focussel("feri_sel",colwidth, selcolor);
+	focussel("temp_sel",tempwidth, seltemp);
+
+	}
+
+function closeprops()
+	{
+	document.getElementById("propsover").style.display="none";
+	}
 
 setTimeout("startfunc();",1000);
 
