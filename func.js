@@ -30,7 +30,7 @@ function startfunc()
 				{
 				change_slide(4);
 				}
-
+			}
 		else
 			{
 			setTimeout("startfunc();",1000);
