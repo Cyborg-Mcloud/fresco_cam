@@ -1,13 +1,12 @@
    var pictureSource;   // picture source
     var destinationType; // sets the format of returned value
 
-    document.addEventListener("deviceready",onDeviceReady,false);
-    function onDeviceReady() 
-		{
-		console.log("movedi");
-        pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
-	    }
+
+
+
+
+
+   
 
 
     function onPhotoDataSuccess(imageData) 
