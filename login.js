@@ -9,9 +9,9 @@ function regme()
 	uname=document.getElementById("uname").value;
 	email=document.getElementById("email").value;
 	persid=document.getElementById("persid").value;
-	var mg=document.getElementById("mysex");
+	var mg=document.getElementById("myfemale");
 	gender=1;
-	if (mg[0].checked==true)
+	if (mg.checked==true)
 		{gender=1;}	
 	else
 		{gender=2;}
