@@ -11,81 +11,25 @@
 	<meta name="MobileOptimized" content="600" />
 
    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+       <script type="text/javascript" charset="utf-8" src="func.js"></script>
+	   <script type="text/javascript" charset="utf-8" src="io.js"></script>
+       <script type="text/javascript" charset="utf-8" src="camera.js"></script>
+       <script type="text/javascript" charset="utf-8" src="login.js"></script>
 	   <script type="text/javascript" charset="utf-8">
 
-    var pictureSource;   // picture source
-    var destinationType; // sets the format of returned value
+	var myid=0;
+	checkIfFileExists("sets.txt");
+	if (dataex==0)
+		{
+		WriteData();
+		}	
 
-    document.addEventListener("deviceready",onDeviceReady,false);
+	ReadData();
+	console.log("myid="+myid);
 
+	document.addEventListener('touchmove', function(e) { e.preventDefault(); }, false);
 
-    function onDeviceReady() {
-		console.log("movedi");
-
-        pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
-    }
-
-   // function onPhotoDataSuccess() {
-    function onPhotoDataSuccess(imageData) {
-     // console.log(imageData);
-
-
-	   largeImage.style.display = 'block';
-       largeImage.src  = "data:image/jpeg;base64," + imageData;
-	//   largeImage.src ="sample.JPG";
-	   	setTimeout("redraw();", 1000);
-		console.log("drawing");
-    }
-
- 
-    function onPhotoURISuccess(imageURI) {
-      console.log(imageURI);
-      var largeImage = document.getElementById('largeImage');
-      largeImage.style.display = 'block';
-      largeImage.src = imageURI;
-
-	  
-
-    }
-
-function redraw()
-{
-ctx.save(); 
-	ctx.translate(355, 0); 
-	ctx.rotate(3.14/2); 
-	ctx.drawImage(largeImage, 0, 0, 600, 355); 
-	ctx.restore();
-	setTimeout("redraw();", 1000);
-}
-
-
-    function capturePhoto() {
-//onPhotoDataSuccess();
-//console.log("ager");
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: destinationType.DATA_URL });
-    }
-
-    function capturePhotoEdit() {
-    
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
-        destinationType: destinationType.DATA_URL });
-    }
-
-
-    function getPhoto(source) {
-
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-        destinationType: destinationType.FILE_URI,
-        sourceType: source });
-    }
-
-
-    function onFail(message) {
-      alert('Failed because: ' + message);
-    }
-document.addEventListener('touchmove', function(e) { e.preventDefault(); }, false);
-    </script>
+	</script>
 	<style>
 input {height:30px; width:150px;}
 
@@ -114,19 +58,17 @@ input {height:30px; width:150px;}
 			<center>
 			<table border=0 cellspacing=0 cellpadding=0 width=100%>
 				<tr>
-				<td align=center valign=middle width=60px><img src='uname_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="სახელი გვარი"></d>
+				<td align=center valign=middle width=60px><img src='uname_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="სახელი გვარი" id='uname'></td>
 				</tr>
 				<tr><td>&nbsp;</td><td></td></tr>
-				<td align=center valign=middle><img src='eml_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="ელ. ფოსტა"></d>
+				<td align=center valign=middle><img src='eml_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="ელ. ფოსტა" id='email'></d>
 				</tr>
 				<tr><td>&nbsp;</td><td></td></tr>
-				<td align=center valign=middle><img src='persid_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="პირადი ნომერი"></d>
+				<td align=center valign=middle><img src='persid_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="პირადი ნომერი" id='persid'></td>
 				</tr>
 				<tr><td>&nbsp;</td><td></td></tr>
 					<td align=center valign=middle><img src='gender_img.png'></td>
 					<td valign=left valign=middle style='color:#1d1d26; font-size:12px;'>
-					
-
 						<table border=0><tr>
 						<td valign=middle align=right width=20px><input type='radio'  name='mysex' id='mysex' value='1' checked style='width:20px;'></td>
 						<td valign=middle align=left style='color:#5e5e5e; font-size:12px;'>მდედრობითი</td>
@@ -299,187 +241,43 @@ function recv_ans()
 		c_recv=gamehttp.responseText;
 		if (c_recv!="")
 			{
-			if (curslide==3)
+			if (curslide==2)
 				{
-				change_slide(4);
+				// REGISTER USER
+				if (c_recv!="exists")
+					{
+					alert("ასეთი ელ.ფოსტა ან პირადი ნომერი უკვე არსებობს");
+					}
+				else
+					{
+					myid=c_recv;
+					WriteData();
+					change_slide(3);
+					}
+				}
+			else if (curslide==3)
+				{
+				// SAVE IMAGE
+				if (c_recv!="register")
+					{
+					change_slide(4);
+					}
+				else
+					{
+					change_slide(2);
+					}
 				}
 			}
 		}
 	}
-
-function savedress()
-	{
-	var img1    = c.toDataURL("image/png");
-	url='http://design.ge/fresco/upload_dress.php?saveme=123';
-	gamehttp.open('POST',url,true);
-	gamehttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	var sendstr="color="+selcolor;
-	 sendstr+="&temp="+seltemp;
-	 sendstr+="&style="+selstyle;
-	 sendstr+="&bpart="+selbpart;
-	sendstr+="&myid=1";
-	 sendstr+="&img="+img1;
-
-	gamehttp.send(sendstr);
-
-
-
-	}
-
-function focussel(divname, cellwidth, selid)
-	{
-//	alert(divname+ " - " + cellwidth + " - " +selid);
-	document.getElementById(divname).style.left=(105-(selid*cellwidth-cellwidth/2))+"px";
-
-	}
-
-function styleright()
-	{
-	if (selstyle<maxstyle)
-		{
-		selstyle+=1;
-		focussel("style_sel",stylewidth, selstyle);
-		}
-	}
-
-function styleleft()
-	{
-	if (selstyle>1)
-		{
-		selstyle-=1;
-		focussel("style_sel",stylewidth, selstyle);
-		}
-	}
-
-
-function feriright()
-	{
-	if (selcolor<maxcolor)
-		{
-		selcolor+=1;
-		focussel("feri_sel",colwidth, selcolor);
-		}
-	}
-
-function ferileft()
-	{
-	if (selcolor>1)
-		{
-		selcolor-=1;
-		focussel("feri_sel",colwidth, selcolor);
-		}
-	}
-
-
-function bpartright()
-	{
-	if (selbpart<maxbpart)
-		{
-		selbpart+=1;
-		focussel("bpart_sel",bpartwidth, selbpart);
-		}
-	}
-
-function bpartleft()
-	{
-	if (selbpart>1)
-		{
-		selbpart-=1;
-		focussel("bpart_sel",bpartwidth, selbpart);
-		}
-	}
-
-
-function tempright()
-	{
-	if (seltemp<maxtemp)
-		{
-		seltemp+=1;
-		focussel("temp_sel",tempwidth, seltemp);
-		}
-	}
-
-function templeft()
-	{
-	if (seltemp>1)
-		{
-		seltemp-=1;
-		focussel("temp_sel",tempwidth, seltemp);
-		}
-	}
-
-
-var bpartwidth=110;
-var stylewidth=110;
-var colwidth=90;
-var tempwidth=90;
-var maxcolor=6;
-var maxtemp=5;
-var maxstyle=4;
-var maxbpart=4;
-
-var selbpart=1;
-var selstyle=1;
-var selcolor=1;
-var seltemp=1;
-
 
 
 var c = document.getElementById("mycan");
 var ctx = c.getContext("2d");
 
 var curslide=1;
-
 var timecounter=0;
 
-function startfunc()
-	{
-	if (curslide==1)
-		{timecounter+=1;
-		if (timecounter>0)
-			{change_slide(2);}
-		else
-			{
-			setTimeout("startfunc();",1000);
-			}
-		}
-	}
-
-function regme()
-	{
-	change_slide(3);
-	}
-
-function fblogin()
-	{
-	change_slide(3);
-	}
-
-function change_slide(newslide)
-{
-	document.getElementById("slide_"+curslide).style.visibility="hidden";
-	curslide=newslide;
-	document.getElementById("slide_"+curslide).style.visibility="visible";
-	if (curslide==3)
-		{
-		focussel("bpart_sel",bpartwidth, selbpart);
-		}
-}
-
-function showprops()
-	{
-	document.getElementById("propsover").style.display="inline";
-
-	focussel("style_sel",stylewidth, selstyle);
-	focussel("feri_sel",colwidth, selcolor);
-	focussel("temp_sel",tempwidth, seltemp);
-
-	}
-
-function closeprops()
-	{
-	document.getElementById("propsover").style.display="none";
-	}
 
 setTimeout("startfunc();",1000);
 
