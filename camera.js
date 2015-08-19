@@ -2,10 +2,11 @@
     var destinationType; // sets the format of returned value
 
 
+var imgtaken=0;
 
 
-
-  var largeImage =document.getElementById('largeImage');
+var sampleimg=new Image();
+sampleimg.src="sample.png";
    
 
 
@@ -22,9 +23,10 @@ function onPhotoDataSuccess(imageData)
 function onPhotoURISuccess(imageURI) 
 	{
       console.log(imageURI);
-
+      var largeImage = document.getElementById('largeImage');
       largeImage.style.display = 'block';
       largeImage.src = imageURI;
+	  imgtaken=1;
 
 	  
 
@@ -32,10 +34,14 @@ function onPhotoURISuccess(imageURI)
 
 function redraw()
 {
-ctx.save(); 
+	ctx.save(); 
 	ctx.translate(355, 0); 
 	ctx.rotate(3.14/2); 
-	ctx.drawImage(largeImage, 0, 0, 600, 355); 
+	if (imgtaken==1)
+		{	ctx.drawImage(largeImage, 0, 0, 600, 355); 		}
+	else
+	{	ctx.drawImage(sampleimg, 0, 0, 600, 355);}
+
 	ctx.restore();
 	setTimeout("redraw();", 1000);
 }
