@@ -19,7 +19,7 @@ function startfunc()
 	{
 	if (curslide==1)
 		{timecounter++;
-		if (timecounter>1)
+		if (timecounter==1)
 			{
 			console.log("dataex: "+dataex);
 			if (dataex==0)
