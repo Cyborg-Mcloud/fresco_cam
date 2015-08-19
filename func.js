@@ -26,7 +26,9 @@ function startfunc()
 				WriteData();
 				}	
 			ReadData();
-
+			}
+		else if (timecounter>2)
+			{
 			if (myid==0)
 				{
 				console.log("first start");
