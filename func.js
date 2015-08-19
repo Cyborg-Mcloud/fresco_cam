@@ -49,7 +49,21 @@ function change_slide(newslide)
 		{
 		focussel("bpart_sel",bpartwidth, selbpart);
 		}
+	else if (curslide==4)
+		{
+		req_mylib();
+		}
 }
+
+function req_mylib()
+	{
+
+	url='http://design.ge/fresco/reqlib.php?myid='+myid;
+	gamehttp.open('GET',url,true);
+	gamehttp.send();
+
+	}
+
 
 function downimg(murl)
 	{

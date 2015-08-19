@@ -243,6 +243,7 @@ else if (window.ActiveXObject) {gamehttp=new ActiveXObject('Microsoft.XMLHTTP');
 else {alert('Your browser does not support XMLHTTP!');}
 gamehttp.onreadystatechange=recv_ans;
 
+var mylib="";
 
 function recv_ans()
 	{
@@ -261,6 +262,7 @@ function recv_ans()
 				else
 					{
 					myid=c_recv;
+					console.log("chemi id:"+myid);
 					WriteData();
 					change_slide(3);
 					}
@@ -276,6 +278,14 @@ function recv_ans()
 					{
 					change_slide(2);
 					}
+				}
+			else if (curslide==4)
+				{
+				// RECEIVE LIBRARY
+				
+				mylib=c_recv;
+				console.log("library: "+mylib);
+					
 				}
 			}
 		}

@@ -27,7 +27,7 @@ function gotFileEntry(fileEntry)
 // SAVE SETTINGS
 function gotFileWriter(writer) 
 	{
-	writer.write(myid+";");
+	writer.write(myid+";"+uname+";"+email+";"+persid+";"+gender+";");
 
 	}
 
