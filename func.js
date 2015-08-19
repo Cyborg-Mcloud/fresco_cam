@@ -19,8 +19,14 @@ function startfunc()
 	{
 	if (curslide==1)
 		{timecounter+=1;
-		if (timecounter>0)
+		if (timecounter>1)
 			{
+			if (dataex==0)
+				{
+				WriteData();
+				}	
+			ReadData();
+
 			if (myid==0)
 				{
 				console.log("first start");

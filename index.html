@@ -18,19 +18,14 @@
 	   <script type="text/javascript" charset="utf-8">
 
 	var myid=0;
-	
+	 var dataex=0;
     document.addEventListener("deviceready",onDeviceReady,false);
 function onDeviceReady() 
 	{
 	
-   var dataex=0;
+  
 	checkIfFileExists("");
-	if (dataex==0)
-		{
-		WriteData();
-		}	
-
-	ReadData();
+	
 	console.log("myid="+myid);
 
 	pictureSource=navigator.camera.PictureSourceType;

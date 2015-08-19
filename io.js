@@ -58,6 +58,8 @@ function readAsText(file)
 		var myData =evt.target.result;
 		a=myData.split(";");
 		myid=a[0];
+
+		console.log("read: "+myData);
 		};
 	reader.readAsText(file);
 	}
