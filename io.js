@@ -2,6 +2,7 @@
 
 function WriteData()
 	{
+
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotfswrite, fail);
 	}
 
@@ -29,7 +30,7 @@ function gotFileEntry(fileEntry)
 function gotFileWriter(writer) 
 	{
 	writer.write(myid+";"+uname+";"+email+";"+persid+";"+gender+";");
-
+	console.log("saved: "+myid+";"+uname+";"+email+";"+persid+";"+gender+";");
 	}
 
 function fail(error)
