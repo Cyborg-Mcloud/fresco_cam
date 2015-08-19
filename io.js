@@ -1,4 +1,4 @@
-var dataex=0;
+
 
 function WriteData()
 	{
@@ -96,10 +96,12 @@ function notile()
 function fileExists(fileEntry)
 	{
     dataex=1;
+	console.log("found");
 	}
 function fileDoesNotExist()
 	{
     dataex=0;
+	console.log("not found");
 	}
 function getFSFail(evt)
 	{
