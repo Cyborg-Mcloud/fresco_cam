@@ -5,23 +5,24 @@
 
 
 
-
+  var largeImage =document.getElementById('largeImage');
    
 
 
-    function onPhotoDataSuccess(imageData) 
-		{
-     // console.log(imageData);
-	   largeImage.style.display = 'block';
-       largeImage.src  = "data:image/jpeg;base64," + imageData;
-	   	setTimeout("redraw();", 1000);
-		console.log("drawing");
-	    }
+function onPhotoDataSuccess(imageData) 
+	{
+ // console.log(imageData);
+   largeImage.style.display = 'block';
+   largeImage.src  = "data:image/jpeg;base64," + imageData;
+	setTimeout("redraw();", 1000);
+	console.log("drawing");
+	}
 
  
-    function onPhotoURISuccess(imageURI) {
+function onPhotoURISuccess(imageURI) 
+	{
       console.log(imageURI);
-      var largeImage = document.getElementById('largeImage');
+
       largeImage.style.display = 'block';
       largeImage.src = imageURI;
 
