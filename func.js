@@ -21,13 +21,14 @@ function startfunc()
 		{timecounter+=1;
 		if (timecounter>1)
 			{
+			console.log("dataex: "+dataex);
 			if (dataex==0)
 				{
 				WriteData();
 				}	
 			ReadData();
 			}
-		else if (timecounter>2)
+		else if (timecounter>3)
 			{
 			if (myid==0)
 				{
