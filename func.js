@@ -59,6 +59,7 @@ function change_slide(newslide)
 	if (curslide==3)
 		{
 		focussel("bpart_sel",bpartwidth, selbpart);
+		setTimeout("redraw();", 1000);
 		}
 	else if (curslide==4)
 		{

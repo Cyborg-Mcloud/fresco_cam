@@ -15,7 +15,7 @@ function onPhotoDataSuccess(imageData)
  // console.log(imageData);
    largeImage.style.display = 'block';
    largeImage.src  = "data:image/jpeg;base64," + imageData;
-	setTimeout("redraw();", 1000);
+
 	console.log("drawing");
 	}
 
@@ -28,22 +28,26 @@ function onPhotoURISuccess(imageURI)
       largeImage.src = imageURI;
 	  imgtaken=1;
 
-	  
-
+	
     }
 
 function redraw()
 {
-	ctx.save(); 
-	ctx.translate(355, 0); 
-	ctx.rotate(3.14/2); 
+if (curslide==3)
+	{
 	if (imgtaken==1)
-		{	ctx.drawImage(largeImage, 0, 0, 600, 355); 		}
+		{	
+		ctx.save(); 
+		ctx.translate(355, 0); 
+		ctx.rotate(3.14/2); 
+		ctx.drawImage(largeImage, 0, 0, 600, 355); 		
+		ctx.restore();
+		}
 	else
-	{	ctx.drawImage(sampleimg, 0, 0, 600, 355);}
-
-	ctx.restore();
+		{	ctx.drawImage(sampleimg, 0, 0);}
+	
 	setTimeout("redraw();", 1000);
+	}
 }
 
 
