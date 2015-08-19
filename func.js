@@ -59,6 +59,7 @@ function req_mylib()
 	{
 
 	url='http://design.ge/fresco/reqlib.php?myid='+myid;
+	console.log(url);
 	gamehttp.open('GET',url,true);
 	gamehttp.send();
 

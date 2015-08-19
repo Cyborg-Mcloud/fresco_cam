@@ -1,3 +1,4 @@
+var dataex=0;
 
 function WriteData()
 	{
@@ -71,7 +72,7 @@ function checkIfFileExists(path)
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getDirectory("dresco/imgs", {create: true, exclusive: false}, fileExists, fileDoesNotExist); } , getFSFail); 
 	if (path!="")
 		{
-			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getFile("dresco/"+path, { create: false }, fileExists, fileDoesNotExist);}, getFSFail); 
+		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){fileSystem.root.getFile("dresco/"+path, { create: false }, fileExists, fileDoesNotExist);}, getFSFail); 
 		}
 
 	}
