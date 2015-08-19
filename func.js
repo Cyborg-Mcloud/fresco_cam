@@ -18,7 +18,7 @@ var seltemp=1;
 function startfunc()
 	{
 	if (curslide==1)
-		{timecounter+=1;
+		{timecounter++;
 		if (timecounter>1)
 			{
 			console.log("dataex: "+dataex);
@@ -27,6 +27,7 @@ function startfunc()
 				WriteData();
 				}	
 			ReadData();
+			setTimeout("startfunc();",1000);
 			}
 		else if (timecounter>3)
 			{
@@ -37,6 +38,7 @@ function startfunc()
 				}
 			else
 				{
+				console.log("changing slide");
 				change_slide(4);
 				}
 			}
