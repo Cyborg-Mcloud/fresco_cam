@@ -5,29 +5,30 @@
 var imgtaken=0;
 
 
-var sampleimg=new Image();
-sampleimg.src="sample.png";
+var largeImage=new Image();
+largeImage.src="sample.png";
    
+
 
 
 function onPhotoDataSuccess(imageData) 
 	{
  // console.log(imageData);
-   largeImage.style.display = 'block';
+ //  largeImage.style.display = 'block';
    largeImage.src  = "data:image/jpeg;base64," + imageData;
-
+	imgtaken=1;
 	console.log("drawing");
 	}
 
  
 function onPhotoURISuccess(imageURI) 
 	{
-      console.log(imageURI);
-      var largeImage = document.getElementById('largeImage');
-      largeImage.style.display = 'block';
-      largeImage.src = imageURI;
-	  imgtaken=1;
+    console.log(imageURI);
 
+//      largeImage.style.display = 'block';
+	largeImage.src = imageURI;
+	imgtaken=1;
+	console.log("image taken");
 	
     }
 
@@ -44,7 +45,7 @@ if (curslide==3)
 		ctx.restore();
 		}
 	else
-		{	ctx.drawImage(sampleimg, 0, 0);}
+		{	ctx.drawImage(largeImage, 25, 0);}
 	
 	setTimeout("redraw();", 1000);
 	}
