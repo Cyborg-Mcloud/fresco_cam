@@ -132,7 +132,7 @@ input {height:30px; width:150px;}
 			</div>
 
 <!-- slide 4 -->
-			<div id="slide_4" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;'>
+			<div id="slide_4" style='width:100%;height:100%; visibility:hidden; position:absolute; background-color:#f6f6f6; left:0px; top:0px;'>
 				<img src='home_logo.png' width=100% style='position:absolute; left:0px; top:0px;'>
 					<a href='Javascript: change_slide(3);' style='border:1px solid red; position:absolute; left:22px; top:30px; width:50px; height:45px; display:block;'></a>
 
@@ -283,12 +283,30 @@ function recv_ans()
 				
 				mylib=c_recv;
 				console.log("library: "+mylib);
+				WriteData();
+
+				suggestme();
 					
 				}
 			}
 		}
 	}
 
+var curtemp=0;
+var curday=0;
+var cursug=0;
+
+function suggestme()
+	{
+	curtemp=1;
+	var d = new Date();
+	curday=d.getDay();
+
+	a=mylib.split("|");
+
+	cursug=Math.random()*(a.length-1);
+	console.log("suggestion: "+cursug);
+	}
 
 var c = document.getElementById("mycan");
 var ctx = c.getContext("2d");
