@@ -134,10 +134,18 @@ input {height:30px; width:150px;}
 <!-- slide 4 -->
 			<div id="slide_4" style='width:100%;height:100%; visibility:hidden; position:absolute; background-color:#f6f6f6; left:0px; top:0px;'>
 				<img src='home_logo.png' width=100% style='position:absolute; left:0px; top:0px;'>
-					<a href='Javascript: change_slide(3);' style='border:1px solid red; position:absolute; left:22px; top:30px; width:50px; height:45px; display:block;'></a>
+				<a href='Javascript: change_slide(3);' style='position:absolute; left:22px; top:30px; width:50px; height:45px; display:block;'></a>
+				
+				<img src='mask.png' width=100% style='position:absolute; left:0px; top:75px;'>
+
+
+				
 
 				<img src='home_footer.png' width=100% style='position:absolute; left:0px; bottom:0px;'>
 			</div>
+
+
+<!-- --------------------------------- -->
 
 			<div style='position:absolute; left:0px; top:0px; width:100%; height:100%; display:none;' id='propsover'>
 
@@ -304,7 +312,7 @@ function suggestme()
 
 	a=mylib.split("|");
 
-	cursug=Math.random()*(a.length-1);
+	cursug=parseInt(Math.random()*(a.length-1));
 	console.log("suggestion: "+cursug);
 	}
 
