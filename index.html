@@ -381,8 +381,19 @@ function set_weather(mstr)
 	{
 	k=mstr.search("<yweather:condition");
 
-	mstr=mstr.substr(k, 100);
+	mstr=mstr.substr(k, 107);
 	console.log(mstr);
+
+	a=mstr.split('text="');
+	b=a[1].split('"');
+	curprog=b[0];
+
+	a=mstr.split('temp="');
+	b=a[1].split('"');
+	curtemp=b[0];
+
+	document.getElementById("weather_show").innerHTML=curtemp+" C<BR>"+curprog;
+
 	}
 
 setTimeout("startfunc();",1000);
