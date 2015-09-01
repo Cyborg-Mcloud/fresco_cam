@@ -64,10 +64,10 @@ input {height:30px; width:150px;}
 			<center>
 			<table border=0 cellspacing=0 cellpadding=0 width=100%>
 				<tr>
-				<td align=center valign=middle width=60px><img src='uname_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="სახელი გვარი" id='uname'></td>
+				<td align=center valign=middle width=60px><img src='uname_img.png'></td><td valign=middle><input type='text' style='border:0px; height:30px;' size=30 placeholder="სახელი გვარი" id='uname'></td>
 				</tr>
 				<tr><td>&nbsp;</td><td></td></tr>
-				<td align=center valign=middle><img src='eml_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="ელ. ფოსტა" id='email'></d>
+				<td align=center valign=middle><img src='eml_img.png'></td><td valign=middle><input type='text' style='border:0px;height:30px;' placeholder="ელ. ფოსტა" id='email' size=30 ></d>
 				</tr>
 				<tr><td>&nbsp;</td><td></td></tr>
 				<td align=center valign=middle><img src='persid_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="პირადი ნომერი" id='persid'></td>
@@ -106,12 +106,12 @@ input {height:30px; width:150px;}
 					
 						<div style='position:relative; width:210px; height:33px; margin:0px padding:0px; overflow:hidden; margin-top:5px; '>
 							<div id='bpart_sel' style='position:absolute; left:0px; top:0px;  '>
-								<table border=0 cellspacing=0 cellpadding=0 width=280px>
+								<table border=0 cellspacing=0 cellpadding=0 width=320px>
 									<tr>
-									<td valign=middle width=70px align=center>ტანი</td>
-									<td width=110px align=center  valign=middle>ზედა</td>
-									<td width=110px align=center valign=middle>ქვედა</td>
-									<td width=110px align=center valign=middle>ფეხს.</td>
+									<td valign=middle width=80px align=center>ტანი</td>
+									<td width=80px align=center  valign=middle>ზედა</td>
+									<td width=80px align=center valign=middle>ქვედა</td>
+									<td width=80px align=center valign=middle>ფეხს.</td>
 									</tr>
 								</table>
 							</div>
@@ -139,9 +139,9 @@ input {height:30px; width:150px;}
 			
 				<a href='Javascript: change_slide(3);' style='position:absolute; left:22px; top:30px; width:50px; height:45px; display:block;'></a>
 				
-				<a href='Javascript: show_styles();' style='border:1px solid red; position:absolute; left:110px; top:30px; width:50px; height:45px; display:block;'></a>
+				<a href='Javascript: show_styles();' style='position:absolute; left:110px; top:30px; width:50px; height:45px; display:block;'></a>
 				
-				<a href='Javascript: change_slide(5);' style='border:1px solid red; position:absolute; left:200px; top:30px; width:50px; height:45px; display:block;'></a>
+				<a href='Javascript: change_slide(5);' style=' position:absolute; left:200px; top:30px; width:50px; height:45px; display:block;'></a>
 				
 			
 
@@ -156,7 +156,11 @@ input {height:30px; width:150px;}
 
 
 				<img src='home_footer.png' width=100% style='position:absolute; left:0px; bottom:0px;'>
-				<a href='Javascript: show_weather();' style='border:1px solid red; position:absolute; left:10px; top:500px; width:50px; height:45px; display:block; z-index:90;'></a>
+
+<div id="weather_show" style='border:1px solid red; position:absolute; left:10px; top:450px; width:80px; height:80px; display:block; z-index:91; text-align:center;'>20 C<br>Mostly Cloudy</div>
+
+
+				<a href='Javascript: show_weather();' style='border:1px solid red; position:absolute; left:10px; top:530px; width:50px; height:45px; display:block; z-index:90;'></a>
 			</div>
 
 
