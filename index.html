@@ -157,10 +157,10 @@ input {height:30px; width:150px;}
 
 				<img src='home_footer.png' width=100% style='position:absolute; left:0px; bottom:0px;'>
 
-<div id="weather_show" style='border:1px solid red; position:absolute; left:10px; top:450px; width:80px; height:80px; display:block; z-index:91; text-align:center;'>20 C<br>Mostly Cloudy</div>
+<div id="weather_show" style='border:1px solid gray; position:absolute; left:10px; top:450px; width:80px; height:80px; display:block; z-index:91; text-align:center; background-color:white; display:none; color:gray;'>20 C<br>Mostly Cloudy</div>
 
 
-				<a href='Javascript: show_weather();' style='border:1px solid red; position:absolute; left:10px; top:530px; width:50px; height:45px; display:block; z-index:90;'></a>
+				<a href='Javascript: show_weather();' style=' position:absolute; left:10px; top:530px; width:50px; height:50px; display:block; z-index:90;'></a>
 			</div>
 
 
@@ -259,6 +259,22 @@ input {height:30px; width:150px;}
 	</div>
 
 <script>
+
+var wvis=0;
+
+function show_weather()
+	{
+	if (wvis==0)
+		{
+		document.getElementById("weather_show").style.display="block";
+		wvis=1;
+		}
+	else
+		{
+		document.getElementById("weather_show").style.display="none";
+		wvis=1;
+		}
+	}
 
 var gamehttp;
 var c_recv;
