@@ -1,4 +1,4 @@
-var bpartwidth=110;
+var bpartwidth=70;
 var stylewidth=110;
 var colwidth=90;
 var tempwidth=90;
