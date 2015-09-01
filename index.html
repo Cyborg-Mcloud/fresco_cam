@@ -272,7 +272,7 @@ function show_weather()
 	else
 		{
 		document.getElementById("weather_show").style.display="none";
-		wvis=1;
+		wvis=0;
 		}
 	}
 
@@ -294,7 +294,11 @@ function recv_ans()
 		c_recv=gamehttp.responseText;
 		if (c_recv!="")
 			{
-			if (curslide==2)
+			if (c_recv.search("<yweather:condition")>-1)
+				{
+				set_weather(c_recv);
+				}
+			else if (curslide==2)
 				{
 				// REGISTER USER
 				if (c_recv=="exists")
@@ -336,13 +340,15 @@ function recv_ans()
 		}
 	}
 
+
+var curprog="";
 var curtemp=0;
 var curday=0;
 var cursug=0;
 
 function suggestme()
 	{
-	curtemp=1;
+
 	var d = new Date();
 	curday=d.getDay();
 
@@ -362,9 +368,25 @@ var ctx = c.getContext("2d");
 var curslide=1;
 var timecounter=0;
 
+function get_weather()
+	{
+	curtemp=15;
+	url='http://weather.yahooapis.com/forecastrss?w=12699450&u=c';
+	console.log(url);
+	gamehttp.open('GET',url,true);
+	gamehttp.send();
+	}
+
+function set_weather(mstr)
+	{
+	k=mstr.search("<yweather:condition");
+
+	mstr=mstr.substr(k, 100);
+	console.log(mstr);
+	}
 
 setTimeout("startfunc();",1000);
-
+setTimeout("get_weather();",1000);
 </script>
   </body>
 </html>
