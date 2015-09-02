@@ -59,6 +59,7 @@ input {height:30px; width:150px;}
 
 		</div>
 
+<!-- REGISTER -->
 		<div id="slide_2" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;'>
 			<img src='header.png' width='100%'>
 			<center>
@@ -90,6 +91,37 @@ input {height:30px; width:150px;}
 			ან<br>
 			<a href='Javascript: fblogin();'><img src='fb_login.png'></a></center>
 
+		</div>
+
+<!-- PROFILE -->
+		<div id="slide_5" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;'>
+			<img src='header.png' width='100%'>
+			<center>
+			<table border=0 cellspacing=0 cellpadding=0 width=100%>
+				<tr>
+				<td align=center valign=middle width=60px><img src='uname_img.png'></td><td valign=middle><input type='text' style='border:0px; height:30px;' size=30 placeholder="სახელი გვარი" id='prof_uname'></td>
+				</tr>
+				<tr><td>&nbsp;</td><td></td></tr>
+				<td align=center valign=middle><img src='eml_img.png'></td><td valign=middle><input type='text' style='border:0px;height:30px;' placeholder="ელ. ფოსტა" id='prof_email' size=30 ></d>
+				</tr>
+				<tr><td>&nbsp;</td><td></td></tr>
+				<td align=center valign=middle><img src='persid_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="პირადი ნომერი" id='prof_persid'></td>
+				</tr>
+				<tr><td>&nbsp;</td><td></td></tr>
+					<td align=center valign=middle><img src='gender_img.png'></td>
+					<td valign=left valign=middle style='color:#1d1d26; font-size:12px;'>
+						<table border=0><tr>
+						<td valign=middle align=right width=20px><input type='radio'  name='mysex' id='prof_myfemale' value='1' checked style='width:20px;'></td>
+						<td valign=middle align=left style='color:#5e5e5e; font-size:12px;'>მდედრობითი</td>
+						<td valign=middle align=right width=20px><input type='radio'  name='mysex' id='prof_mymale' value='2'  style='width:20px;'></td>
+						<td valign=middle align=left style='color:#5e5e5e; font-size:12px;'>მამრობითი</td>
+						</tr></table>
+					</td>
+				</tr>
+				<tr><td>&nbsp;</td><td></td></tr>
+			</table>
+			</center>
+			<center><a href='Javascript: save_prof();'><img src='but_save.png'></a><br>
 		</div>
 
 <!-- slide 3 - CAMERA SLIDE -->
@@ -157,7 +189,7 @@ input {height:30px; width:150px;}
 
 				<img src='home_footer.png' width=100% style='position:absolute; left:0px; bottom:0px;'>
 
-<div id="weather_show" style='border:1px solid gray; position:absolute; left:10px; top:450px; width:80px; height:80px; display:block; z-index:91; text-align:center; background-color:white; display:none; color:gray;'>20 C<br>Mostly Cloudy</div>
+				<div id="weather_show" style='border:1px solid gray; position:absolute; left:10px; top:450px; width:80px; height:80px; display:block; z-index:91; text-align:center; background-color:white; display:none; color:gray;'>20 C<br>Mostly Cloudy</div>
 
 
 				<a href='Javascript: show_weather();' style=' position:absolute; left:10px; top:530px; width:50px; height:50px; display:block; z-index:90;'></a>
@@ -336,6 +368,20 @@ function recv_ans()
 				suggestme();
 					
 				}
+			else if (curslide==5)
+				{
+				// USER PROFILE
+				if (c_recv=="saved")
+					{
+					console.log("profile saved:"+myid);
+					WriteData();
+					change_slide(4);
+					}
+				else
+					{
+					alert("შეცდომა: "+c_recv);
+					}
+				}
 			}
 		}
 	}
@@ -391,7 +437,7 @@ function set_weather(mstr)
 	a=mstr.split('temp="');
 	b=a[1].split('"');
 	curtemp=b[0];
-
+	curprog=curprog.replace("/","<BR>");
 	document.getElementById("weather_show").innerHTML=curtemp+" C<BR>"+curprog;
 
 	}
