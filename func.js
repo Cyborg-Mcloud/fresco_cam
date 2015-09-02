@@ -197,6 +197,7 @@ function show_styles()
 	else
 		{document.getElementById("mystyle").style.display="none";
 		stvis=0;
+		suggestme();
 		}
 	}
 
