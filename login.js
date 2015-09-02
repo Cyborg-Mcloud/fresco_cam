@@ -59,3 +59,17 @@ function save_prof()
 
 		}
 	}
+
+
+function open_prof()
+{
+document.getElementById("prof_uname").value=uname;
+document.getElementById("prof_email").value=uname;
+document.getElementById("prof_persid").value=uname;
+if (gender==1)
+	{document.getElementById("prof_female").checked=true}
+else
+	{document.getElementById("prof_male").checked=true}
+
+change_slide(5);
+}
