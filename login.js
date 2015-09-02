@@ -64,8 +64,8 @@ function save_prof()
 function open_prof()
 {
 document.getElementById("prof_uname").value=uname;
-document.getElementById("prof_email").value=uname;
-document.getElementById("prof_persid").value=uname;
+document.getElementById("prof_email").value=email;
+document.getElementById("prof_persid").value=persid;
 if (gender==1)
 	{document.getElementById("prof_female").checked=true}
 else
