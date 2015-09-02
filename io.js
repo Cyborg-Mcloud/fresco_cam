@@ -58,11 +58,11 @@ function readAsText(file)
 		var myData =evt.target.result;
 		a=myData.split(";");
 		myid=a[0];
-uname=a[0];
-email=a[0];
-persid=a[0];
-gender=a[0];
-mylib=a[0];
+		uname=a[1];
+		email=a[2];
+		persid=a[3];
+		gender=a[4];
+		mylib=a[5];
 
 
 		console.log("read: "+myData);
