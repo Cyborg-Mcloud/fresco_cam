@@ -173,7 +173,7 @@ function chstyleright()
 	if (selchstyle<maxchstyle)
 		{
 		selchstyle+=1;
-		focussel("bpart_sel",chstylewidth, selchstyle);
+		focussel("chstyle_sel",chstylewidth, selchstyle);
 		}
 	}
 
@@ -182,7 +182,21 @@ function chstyleleft()
 	if (selchstyle>1)
 		{
 		selchstyle-=1;
-		focussel("bpart_sel",chstylewidth, selchstyle);
+		focussel("chstyle_sel",chstylewidth, selchstyle);
+		}
+	}
+
+var stvis=0;
+
+function show_styles()
+	{
+	if (stvis==0)
+		{document.getElementById("mystyle").style.display="block";
+		stvis=1;
+		}
+	else
+		{document.getElementById("mystyle").style.display="none";
+		stvis=0;
 		}
 	}
 
