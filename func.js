@@ -1,3 +1,4 @@
+var chstylewidth=110;
 var bpartwidth=80;
 var stylewidth=110;
 var colwidth=90;
@@ -6,12 +7,13 @@ var maxcolor=6;
 var maxtemp=5;
 var maxstyle=4;
 var maxbpart=4;
+var maxchstyle=4;
 
 var selbpart=1;
 var selstyle=1;
 var selcolor=1;
 var seltemp=1;
-
+var selchstyle=1;
 
 
 
@@ -165,6 +167,24 @@ function bpartleft()
 		}
 	}
 
+
+function chstyleright()
+	{
+	if (selchstyle<maxchstyle)
+		{
+		selchstyle+=1;
+		focussel("bpart_sel",chstylewidth, selchstyle);
+		}
+	}
+
+function chstyleleft()
+	{
+	if (selchstyle>1)
+		{
+		selchstyle-=1;
+		focussel("bpart_sel",chstylewidth, selchstyle);
+		}
+	}
 
 function tempright()
 	{

@@ -38,7 +38,7 @@ function onDeviceReady()
 
 	</script>
 	<style>
-input {padding:0px; width:150px;}
+input {padding:0px; width:250px; height:35px; }
 
  html {
        width:100%;
@@ -169,6 +169,30 @@ input {padding:0px; width:150px;}
 <!-- slide 4 - MAIN FRAME-->
 			<div id="slide_4" style='width:100%;height:100%; visibility:hidden; position:absolute; background-color:#f6f6f6; left:0px; top:0px;'>
 				<img src='home_logo.png' width=100% style='position:absolute; left:0px; top:0px;'>
+
+				<div id='mystyle' style='position:absolute; left:35px; top:34px; background:URL(round_foni.png); width:280px;  text-align:center; height:37px;'>
+				<table width=100% border=0 cellspacing=0 cellpadding=0> 
+					<tr><td valign=middle width=30px><a href='Javascript: chstyleleft();' style='display:block; vertical-align:middle;  text-align:center; width:30px; height:22px; padding-top:8px;'><img src='left_but.png'></a></td>
+					<td  valign=top align=center>
+					
+						<div style='position:relative; width:210px; height:33px; margin:0px padding:0px; overflow:hidden; margin-top:5px; '>
+							<div id='chstyle_sel' style='position:absolute; left:0px; top:0px;  '>
+								<table border=0 cellspacing=0 cellpadding=0 width=440პხ>
+									<tr>
+									<td valign=middle width=110px align=center>კლასიკური</td>
+									<td width=110px align=center  valign=middle>სპორტული</td>
+									<td width=110px align=center valign=middle>თავისუფალი</td>
+									<td width=110px align=center valign=middle>საცურაო</td>
+									</tr>
+								</table>
+							</div>
+							<img src='white_overlay.png' style=' width:100%; height:30px; position:absolute; left:0px; top:0px;'>
+						</div>
+					</td>
+					<td valign=middle  width=30px><a href='Javascript: chstyleright();' style='display:block; text-align:center; vertical-align:middle;  height:22px; padding-top:8px; width:30px;  '><img src='right_but.png'></a></td>
+					</tr>
+				</table>
+				</div>
 			
 				<a href='Javascript: change_slide(3);' style='position:absolute; left:22px; top:30px; width:50px; height:45px; display:block;'></a>
 				
@@ -407,6 +431,7 @@ function suggestme()
 	b=a[cursug].split(":");
 
 	document.getElementById("mainimg").src="http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png";
+	focussel("chstyle_sel",chstylewidth, selchstyle);
 	}
 
 var c = document.getElementById("mycan");

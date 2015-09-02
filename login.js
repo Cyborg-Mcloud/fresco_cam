@@ -40,7 +40,7 @@ function save_prof()
 	uname=document.getElementById("prof_uname").value;
 	email=document.getElementById("prof_email").value;
 	persid=document.getElementById("prof_persid").value;
-	var mg=document.getElementById("prof_myfemale");
+	var mg=document.getElementById("prof_female");
 	gender=1;
 	if (mg.checked==true)
 		{gender=1;}	
