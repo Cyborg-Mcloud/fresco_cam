@@ -43,10 +43,16 @@ function onDeviceReady()
 //    autoCancel: Boolean, // Setting this flag and the notification is automatically canceled when the user clicks it
 //    ongoing:    Boolean, // Prevent clearing of notification (Android only)
 
+var now             = new Date().getTime(),
+    sqej = new Date(now + 20*1000);
+console.log(sqej);
+console.log(now);
 	window.plugin.notification.local.schedule({
 		id:         "123123123123",  // A unique id of the notifiction
 		message:    "gamarjoba",  // The message that is displayed
 		title:      "gamarjoba ucha",  // The title of the message  
+		 at: sqej,
+		  every: "day",
 		});
 	}
 
