@@ -50,8 +50,51 @@ function startfunc()
 			}
 		}
 	}
+var timvis=0;
+function show_timer()
+{
+
+	if (timvis==0)
+		{
+		document.getElementById("timer_div").style.display="block";
+		timvis=1;
+		}
+	else
+		{
+		document.getElementById("timer_div").style.display="none";
+		timvis=0;
+		}
+
+var now             = new Date().getTime(),
+    sqej = new Date(2014, 01,01,08,00,00,00);
+console.log(sqej);
+console.log(now);
+	window.plugin.notification.local.schedule({
+		id:         "123123123123",  // A unique id of the notifiction
+		message:    "gamarjoba",  // The message that is displayed
+		title:      "gamarjoba ucha",  // The title of the message  
+		 at: sqej,
+		  every: "day",
+		});
+	}
+}
 
 
+
+
+function show_weather()
+	{
+	if (wvis==0)
+		{
+		document.getElementById("weather_show").style.display="block";
+		wvis=1;
+		}
+	else
+		{
+		document.getElementById("weather_show").style.display="none";
+		wvis=0;
+		}
+	}
 
 function change_slide(newslide)
 {
