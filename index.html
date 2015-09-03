@@ -12,10 +12,12 @@
 	<meta name="MobileOptimized" content="600" />
 
    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-       <script type="text/javascript" charset="utf-8" src="func.js"></script>
+       <script type="text/javascript" src="local-notification.js"></script>
+	   <script type="text/javascript" charset="utf-8" src="func.js"></script>
 	   <script type="text/javascript" charset="utf-8" src="io.js"></script>
        <script type="text/javascript" charset="utf-8" src="camera.js"></script>
        <script type="text/javascript" charset="utf-8" src="login.js"></script>
+
 	   <script type="text/javascript" charset="utf-8">
 
 	var myid=0;
@@ -32,6 +34,20 @@ function onDeviceReady()
 
 	pictureSource=navigator.camera.PictureSourceType;
 	destinationType=navigator.camera.DestinationType;
+
+//   repeat:     String,  // Either 'secondly', 'minutely', 'hourly', 'daily', 'weekly', 'monthly' or 'yearly'
+//   date:       Date,    // This expects a date object
+// badge:      Number,  // Displays number badge to notification
+//    sound:      String,  // A sound to be played
+//    json:       String,  // Data to be passed through the notification
+//    autoCancel: Boolean, // Setting this flag and the notification is automatically canceled when the user clicks it
+//    ongoing:    Boolean, // Prevent clearing of notification (Android only)
+
+	window.plugin.notification.local.add({
+		id:         "123123123123",  // A unique id of the notifiction
+		message:    "gamarjoba",  // The message that is displayed
+		title:      "gamarjoba ucha",  // The title of the message  
+		});
 	}
 
 	document.addEventListener('touchmove', function(e) { e.preventDefault(); }, false);
@@ -139,12 +155,12 @@ input {padding:0px; width:250px; height:35px; }
 					
 						<div style='position:relative; width:210px; height:33px; margin:0px padding:0px; overflow:hidden; margin-top:5px; '>
 							<div id='bpart_sel' style='position:absolute; left:0px; top:0px;  '>
-								<table border=0 cellspacing=0 cellpadding=0 width=320px>
+								<table border=0 cellspacing=0 cellpadding=0 width=440px>
 									<tr>
-									<td valign=middle width=80px align=center>ტანი</td>
-									<td width=80px align=center  valign=middle>ზედა</td>
-									<td width=80px align=center valign=middle>ქვედა</td>
-									<td width=80px align=center valign=middle>ფეხს.</td>
+									<td valign=middle width=110px align=center>მთლიანი ტანი</td>
+									<td width=110px align=center  valign=middle>ზედა ტანი</td>
+									<td width=110px align=center valign=middle>ქვედა ტანი</td>
+									<td width=110px align=center valign=middle>ფეხსაცმელი</td>
 									</tr>
 								</table>
 							</div>
@@ -213,7 +229,7 @@ input {padding:0px; width:250px; height:35px; }
 
 				<a href='Javascript: suggestme();' style='display:block; vertical-align:middle;  text-align:center; position:absolute; left:310px; top:300px; z-index:80;'><img src='home_right.png'></a>
 
-				<a href='Javascript: suggestme();' style='display:block; vertical-align:middle;  text-align:center;  position:absolute; left:165px; top:470px; z-index:80;'><img src='reload.png'></a>
+			<!--	<a href='Javascript: suggestme();' style='display:block; vertical-align:middle;  text-align:center;  position:absolute; left:165px; top:470px; z-index:80;'><img src='reload.png'></a>-->
 
 				<img src='home_footer.png' width=100% style='position:absolute; left:0px; bottom:0px;'>
 

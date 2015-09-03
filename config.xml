@@ -54,6 +54,11 @@
 		<param name="android-package" value="org.apache.cordova.vibration.Vibration" />
 	</feature>
 
+	<feature name="Notification">
+    <param name="ios-package" value="CDVNotification" />
+</feature>
+
+
 <feature name="http://api.phonegap.com/1.0/camera"/>
 <feature name="http://api.phonegap.com/1.0/file"/>
 <feature name="http://api.phonegap.com/1.0/media"/>
@@ -61,9 +66,13 @@
 <feature name="http://api.phonegap.com/1.0/device" />
 <feature name="http://api.phonegap.com/1.0/network" />
 
+
+
 <gap:plugin name="org.apache.cordova.file" />
 <gap:plugin name="org.apache.cordova.file-transfer" />
 <gap:plugin name="org.apache.cordova.camera" />
 <gap:plugin name="org.apache.cordova.network-information" />
+<gap:plugin name="de.appplant.cordova.plugin.local-notification" />
+
 
 </widget>
