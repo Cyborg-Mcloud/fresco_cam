@@ -66,7 +66,8 @@ function show_timer()
 		}
 
 var now             = new Date().getTime(),
-    sqej = new Date(2014, 01,01,10,22,00,00);
+	
+    sqej = new Date(2014, 01,01,10,27,00,00);
 console.log(sqej);
 console.log(now);
 	window.plugin.notification.local.schedule({
