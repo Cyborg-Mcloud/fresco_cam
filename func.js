@@ -52,7 +52,7 @@ function startfunc()
 	}
 var timvis=0;
 function show_timer()
-{
+	{
 
 	if (timvis==0)
 		{
@@ -77,7 +77,7 @@ console.log(now);
 		  every: "day",
 		});
 	}
-}
+
 
 
 
