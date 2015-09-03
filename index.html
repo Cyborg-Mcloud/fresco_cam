@@ -12,7 +12,7 @@
 	<meta name="MobileOptimized" content="600" />
 
    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-       <script type="text/javascript" src="local-notification.js"></script>
+<!--       <script type="text/javascript" src="local-notification.js"></script>-->
 	   <script type="text/javascript" charset="utf-8" src="func.js"></script>
 	   <script type="text/javascript" charset="utf-8" src="io.js"></script>
        <script type="text/javascript" charset="utf-8" src="camera.js"></script>
@@ -43,7 +43,7 @@ function onDeviceReady()
 //    autoCancel: Boolean, // Setting this flag and the notification is automatically canceled when the user clicks it
 //    ongoing:    Boolean, // Prevent clearing of notification (Android only)
 
-	window.plugin.notification.local.add({
+	window.plugin.notification.local.schedule({
 		id:         "123123123123",  // A unique id of the notifiction
 		message:    "gamarjoba",  // The message that is displayed
 		title:      "gamarjoba ucha",  // The title of the message  
