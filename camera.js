@@ -18,6 +18,7 @@ function onPhotoDataSuccess(imageData)
    largeImage.src  = "data:image/jpeg;base64," + imageData;
 	imgtaken=1;
 	console.log("drawing");
+	showprops();
 	}
 
  
@@ -29,6 +30,7 @@ function onPhotoURISuccess(imageURI)
 	largeImage.src = imageURI;
 	imgtaken=1;
 	console.log("image taken");
+		showprops();
 	
     }
 

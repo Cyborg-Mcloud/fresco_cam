@@ -63,20 +63,25 @@ function show_timer()
 		{
 		document.getElementById("timer_div").style.display="none";
 		timvis=0;
-		}
 
-var now             = new Date().getTime(),
-	
-    sqej = new Date(2014, 01,01,10,27,00,00);
-console.log(sqej);
-console.log(now);
-	window.plugin.notification.local.schedule({
+		
+		var now = new Date().getTime(),
+
+		var tartime=document.getElementById("timer_time").value;
+		tt=tartime.split(":");
+
+	    sqej = new Date(2014, 01,01,tt[0],tt[1],00,00);
+		console.log(sqej);
+		console.log(now);
+		window.plugin.notification.local.schedule({
 		id:         "123123123123",  // A unique id of the notifiction
 		message:    "ახალი ჩაცმულობა მზად არის",  // The message that is displayed
 		title:      "Dresco",  // The title of the message  
 		 at: sqej,
 		  every: "day",
 		});
+		}
+
 	}
 
 
