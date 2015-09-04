@@ -1,5 +1,5 @@
 var chstylewidth=110;
-var bpartwidth=110;
+var bpartwidth=130;
 var stylewidth=110;
 var colwidth=90;
 var tempwidth=90;
