@@ -50,6 +50,7 @@ function startfunc()
 			}
 		}
 	}
+	var tartime
 var timvis=0;
 function show_timer()
 	{
@@ -67,7 +68,7 @@ function show_timer()
 		
 		var now = new Date().getTime(),
 
-		var tartime=document.getElementById("timer_time").value;
+		tartime=document.getElementById("timer_time").value;
 		tt=tartime.split(":");
 
 	    sqej = new Date(2014, 01,01,tt[0],tt[1],00,00);
