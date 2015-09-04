@@ -197,13 +197,13 @@ input {padding:0px; width:250px; height:35px; }
 					</div>
 				
 					<div id='partial' style='width:100%; height:420px; overflow:hidden; position:absolute; left:0px; top:0px;'>
-						<img src='slide_1.png' width=260px style='position:absolute; left:150px; top:0px; top:75px; z-index:78; height:140px;' id="zedatani">
+						<img src='slide_1.png' width=260px style='position:absolute; left:100px; top:0px; z-index:78; height:140px;' id="zedatani">
 						<img src='ujra.png' width=100% style='position:absolute; left:0px; top:0px; height:140px; z-index:79; '>
 
-						<img src='slide_1.png' width=260px style='position:absolute; left:150px; top:140px; top:75px; z-index:78; height:140px;' id="qvedatani">
+						<img src='slide_1.png' width=260px style='position:absolute; left:100px; top:140px;  z-index:78; height:140px;' id="qvedatani">
 						<img src='ujra.png' width=100% style='position:absolute; left:0px; top:140px; height:140px; z-index:79; '>
 
-						<img src='slide_1.png' width=260px style='position:absolute; left:150px; top:280px; top:75px; z-index:78; height:140px;' id="fexsacmeli">
+						<img src='slide_1.png' width=260px style='position:absolute; left:100px; top:280px; z-index:78; height:140px;' id="fexsacmeli">
 						<img src='ujra.png' width=100% style='position:absolute; left:0px; top:280px; height:140px; z-index:79; '>
 					</div>		
 				</div>
@@ -497,6 +497,7 @@ function suggestme()
 		{
 		console.log("marto zeda: "+b[1]);
 		document.getElementById("fullbody").style.display="none";
+				document.getElementById("partial").style.display="block";
 		document.getElementById("zedatani").src="http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png";
 
 
@@ -525,6 +526,7 @@ function suggestme()
 	else
 		{
 		console.log("mtliani: "+b[1]);
+		document.getElementById("fullbody").style.display="block";
 		document.getElementById("partial").style.display="none";
 		document.getElementById("mainimg").src="http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png";
 		}
