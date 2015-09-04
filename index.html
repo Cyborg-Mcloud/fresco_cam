@@ -495,6 +495,7 @@ function suggestme()
 
 	if (b[1]!=1)
 		{
+		console.log("marto zeda: "+b[1]);
 		document.getElementById("fullbody").style.display="none";
 		document.getElementById("zedatani").src="http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png";
 
@@ -504,6 +505,7 @@ function suggestme()
 			c=a[i].split(":");
 			if (c[1]==3)
 				{
+				console.log("qveda: "+c[1]);
 				document.getElementById("qvedatani").src="http://design.ge/fresco/imgs/"+myid+"_"+c[0]+".png";
 				i=a.length;
 				}
@@ -514,6 +516,7 @@ function suggestme()
 			c=a[i].split(":");
 			if (c[1]==4)
 				{
+				console.log("fexs: "+c[1]);
 				document.getElementById("fexsacmeli").src="http://design.ge/fresco/imgs/"+myid+"_"+c[0]+".png";
 				i=a.length;
 				}
@@ -521,6 +524,7 @@ function suggestme()
 		}
 	else
 		{
+		console.log("mtliani: "+b[1]);
 		document.getElementById("partial").style.display="none";
 		document.getElementById("mainimg").src="http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png";
 		}
