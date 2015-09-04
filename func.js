@@ -81,6 +81,7 @@ function show_timer()
 		 at: sqej,
 		  every: "day",
 		});
+		window.scrollTo(0, 0);
 		}
 
 	}

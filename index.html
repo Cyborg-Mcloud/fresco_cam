@@ -67,24 +67,24 @@ input {padding:0px; width:250px; height:35px; }
   <body>
 	  <div style='height:570px; border:1px solid red; display:block; overflow:hidden; width:100%;'>
 	
-		<div id="slide_1" style='width:100%;height:100%; visibility:visible; position:absolute; left:0px; top:0px;'>
+		<div id="slide_1" style='width:100%;height:100%; visibility:visible; position:absolute; left:0px; top:0px;' onclick="window.scrollTo(0, 0);">
 			<img src='slide_1.png' width='100%'>
 
 		</div>
 
 <!-- REGISTER -->
-		<div id="slide_2" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;'>
+		<div id="slide_2" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;' onclick="window.scrollTo(0, 0);">
 			<img src='header.png' width='100%'>
 			<center>
 			<table border=0 cellspacing=0 cellpadding=0 width=100%>
 				<tr>
-				<td align=center valign=middle width=60px><img src='uname_img.png'></td><td valign=middle><input type='text' style='border:0px; ' size=30 placeholder="სახელი გვარი" id='uname'></td>
+				<td align=center valign=middle width=60px><img src='uname_img.png'></td><td valign=middle><input type='text' style='border:0px; ' size=30 placeholder="სახელი გვარი" id='uname' onfocus="window.scrollTo(0, 0);"></td>
 				</tr>
 				<tr><td>&nbsp;</td><td></td></tr>
-				<td align=center valign=middle><img src='eml_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="ელ. ფოსტა" id='email' size=30 ></d>
+				<td align=center valign=middle><img src='eml_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="ელ. ფოსტა" id='email' size=30 onfocus="window.scrollTo(0, 0);"></d>
 				</tr>
 				<tr><td>&nbsp;</td><td></td></tr>
-				<td align=center valign=middle><img src='persid_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="პირადი ნომერი" id='persid'></td>
+				<td align=center valign=middle><img src='persid_img.png'></td><td valign=middle><input type='text' style='border:0px;' placeholder="პირადი ნომერი" id='persid' onblur="window.scrollTo(0, 0);"></td>
 				</tr>
 				<tr><td>&nbsp;</td><td></td></tr>
 					<td align=center valign=middle><img src='gender_img.png'></td>
@@ -107,7 +107,7 @@ input {padding:0px; width:250px; height:35px; }
 		</div>
 
 <!-- PROFILE -->
-		<div id="slide_5" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;'>
+		<div id="slide_5" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;' onclick="window.scrollTo(0, 0);">
 			<img src='header.png' width='100%'>
 			<center>
 			<table border=0 cellspacing=0 cellpadding=0 width=100%>
@@ -138,7 +138,7 @@ input {padding:0px; width:250px; height:35px; }
 		</div>
 
 <!-- slide 3 - CAMERA SLIDE -->
-		<div id="slide_3" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;'>
+		<div id="slide_3" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;' onclick="window.scrollTo(0, 0);">
 			<img src='white_logo.png' width=100% style='position:absolute; left:0px; top:0px;'>
 			
 
@@ -179,7 +179,7 @@ input {padding:0px; width:250px; height:35px; }
 			</div>
 
 <!-- slide 4 - MAIN FRAME-->
-			<div id="slide_4" style='width:100%;height:100%; visibility:hidden; position:absolute; background-color:#f6f6f6; left:0px; top:0px;'>
+			<div id="slide_4" style='width:100%;height:100%; visibility:hidden; position:absolute; background-color:#f6f6f6; left:0px; top:0px;' onclick="window.scrollTo(0, 0);">
 				<img src='home_logo.png' width=100% style='position:absolute; left:0px; top:0px;'>
 
 				
@@ -190,12 +190,23 @@ input {padding:0px; width:250px; height:35px; }
 				
 				<a href='Javascript: open_prof();' style=' position:absolute; left:200px; top:30px; width:50px; height:45px; display:block;'></a>
 				
-			
-
-				<img src='slide_1.png' width=260px style='position:absolute; left:60px; top:75px; z-index:78; height:420px;' id="mainimg">
-
-				<img src='mask.png' width=100% style='position:absolute; left:0px; top:75px; height:420px; z-index:79; '>
+				<div style='width:100%; height:420px; overflow:hidden; position:absolute; left:0px; top:75px;'>
+					<div id='fullbody' style='width:100%; height:420px; overflow:hidden; position:absolute; left:0px; top:0px;'>
+						<img src='slide_1.png' width=260px style='position:absolute; left:60px; top:0px; z-index:78; height:420px;' id="mainimg">
+						<img src='mask.png' width=100% style='position:absolute; left:0px; top:0px; height:420px; z-index:79; '>
+					</div>
 				
+					<div id='partial' style='width:100%; height:420px; overflow:hidden; position:absolute; left:0px; top:0px;'>
+						<img src='slide_1.png' width=260px style='position:absolute; left:150px; top:0px; top:75px; z-index:78; height:140px;' id="zedatani">
+						<img src='ujra.png' width=100% style='position:absolute; left:0px; top:0px; height:140px; z-index:79; '>
+
+						<img src='slide_1.png' width=260px style='position:absolute; left:150px; top:140px; top:75px; z-index:78; height:140px;' id="qvedatani">
+						<img src='ujra.png' width=100% style='position:absolute; left:0px; top:140px; height:140px; z-index:79; '>
+
+						<img src='slide_1.png' width=260px style='position:absolute; left:150px; top:280px; top:75px; z-index:78; height:140px;' id="fexsacmeli">
+						<img src='ujra.png' width=100% style='position:absolute; left:0px; top:280px; height:140px; z-index:79; '>
+					</div>		
+				</div>
 				<div id='mystyle' style='display:none; position:absolute; left:35px; top:80px; background:URL(round_foni.png); width:280px;  text-align:center; height:37px; z-index:81;'>
 				<table width=100% border=0 cellspacing=0 cellpadding=0> 
 					<tr><td valign=middle width=30px><a href='Javascript: chstyleleft();' style='display:block; vertical-align:middle;  text-align:center; width:30px; height:22px; padding-top:8px;'><img src='left_but.png'></a></td>
@@ -229,19 +240,19 @@ input {padding:0px; width:250px; height:35px; }
 
 				<img src='home_footer.png' width=100% style='position:absolute; left:0px; bottom:0px;'>
 
-				<div id="weather_show" style='border:1px solid gray; position:absolute; left:10px; top:450px; width:80px; height:80px; display:block; z-index:91; text-align:center; background-color:white; display:none; color:gray;'>20 C<br>Mostly Cloudy</div>
+				<div id="weather_show" style='border:1px solid gray; position:absolute; left:10px; top:425px; width:80px; height:80px; display:block; z-index:91; text-align:center; background-color:white; display:none; color:gray;'>20 C<br>Mostly Cloudy</div>
 
-				<div id="timer_div" style='border:1px solid gray; position:absolute; left:200px; top:450px; width:150px; height:80px; display:block; z-index:92; text-align:center; background-color:white; display:none; color:gray;'>მიუთითეთ დრო<br><input type=text size=5 value="08:00" id="timer_time" style='width:60px;'></div>
+				<div id="timer_div" style='border:1px solid gray; position:absolute; left:200px; top:425px; width:150px; height:80px; display:block; z-index:92; text-align:center; background-color:white; display:none; color:gray;'>მიუთითეთ დრო<br><input type=text size=5 value="08:00" id="timer_time" style='width:60px;' onblur="window.scrollTo(0, 0);"></div>
 
-				<a href='Javascript: show_weather();' style=' position:absolute; left:10px; top:510px; border:1px solid red; width:50px; height:50px; display:block; z-index:90;'></a>
+				<a href='Javascript: show_weather();' style=' position:absolute; left:10px; top:505px; width:50px; height:50px; display:block; z-index:90;'></a>
 
-				<a href='Javascript: show_timer();' style=' position:absolute; left:295px; top:510px; width:50px; height:50px; display:block; z-index:90;'></a>
+				<a href='Javascript: show_timer();' style=' position:absolute; left:295px; top:505px; width:50px; height:50px; display:block; z-index:90;'></a>
 			</div>
 
 
 <!-- --------------------------------- -->
 
-			<div style='position:absolute; left:0px; top:0px; width:100%; height:100%; display:none;' id='propsover'>
+			<div style='position:absolute; left:0px; top:0px; width:100%; height:100%; display:none;' id='propsover' onclick="window.scrollTo(0, 0);">
 
 				<div style='position:absolute; left:0px; top:0px; width:100%; height:100%; background-color:black; filter:alpha(opacity=70); opacity:0.7; z-index:80;'></div>
 				
@@ -460,12 +471,13 @@ function suggestme()
 	for (i=0;i<a.length ;i++ )
 		{
 		b=a[i].split(":");
-		if (b[1]==selchstyle)
+		if (b[2]==selchstyle && (b[1]==1 || b[1]==2))
 			{
 			temp[tc]=i;
 			tc++;
 			}
 		}
+
 	if (tc==0)
 		{
 		console.log("no such found");
@@ -473,7 +485,6 @@ function suggestme()
 		}
 	else
 		{
-		
 		cursug=temp[parseInt(Math.random()*(temp.length-1))];
 		}
 	
@@ -482,7 +493,38 @@ function suggestme()
 	
 	b=a[cursug].split(":");
 
-	document.getElementById("mainimg").src="http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png";
+	if (b[1]!=1)
+		{
+		document.getElementById("fullbody").style.display="none";
+		document.getElementById("zedatani").src="http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png";
+
+
+		for (i=0;i<a.length ;i++ )
+			{
+			c=a[i].split(":");
+			if (c[1]==3)
+				{
+				document.getElementById("qvedatani").src="http://design.ge/fresco/imgs/"+myid+"_"+c[0]+".png";
+				i=a.length;
+				}
+			}
+		
+		for (i=0;i<a.length ;i++ )
+			{
+			c=a[i].split(":");
+			if (c[1]==4)
+				{
+				document.getElementById("fexsacmeli").src="http://design.ge/fresco/imgs/"+myid+"_"+c[0]+".png";
+				i=a.length;
+				}
+			}
+		}
+	else
+		{
+		document.getElementById("partial").style.display="none";
+		document.getElementById("mainimg").src="http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png";
+		}
+
 	focussel("chstyle_sel",chstylewidth, selchstyle);
 	}
 
