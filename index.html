@@ -168,14 +168,15 @@ input {padding:0px; width:250px; height:35px; }
 			</div>
 
 			<img style="display:none;" id="largeImage" src="" width=100% src="sample.png" />
-				<a href="Javascript: savedress();" style='position:absolute; right:15px; top:435px;   '><img src='save_but.png'></a>			
-				<a href="Javascript: change_slide(4);" style='position:absolute; right:15px; top:380px;   '><img src='round_close.png'></a>			
+
+					
 
 			<div style='position:absolute; left:0px; bottom:0px; height:78px; width:100%; background:URL(grn_footer.png);'>
-				<a href="Javascript: showprops();" style='position:absolute; left:5px; top:3px; height:70px; width:75px;  '></a>			
-				<a href="Javascript: capturePhoto();" style='position:absolute; left:143px; top:3px; height:70px; width:75px;  '></a>
-				<a href="Javascript: getPhoto(pictureSource.PHOTOLIBRARY);"  style='position:absolute; right:5px; top:5px; height:70px; width:70px;  '></a></center>
-				
+				<a href="Javascript: showprops();" style='position:absolute; left:5px; top:20px; '><img src='props.png'></a>			
+				<a href="Javascript: capturePhoto();" style='position:absolute; left:143px; top:8px;'><img src='photobut.png'></a>
+				<a href="Javascript: getPhoto(pictureSource.PHOTOLIBRARY);"  style='position:absolute; left:65px; top:20px;'><img src='album_sel.png'></a>
+				<a href="Javascript: savedress();" style='position:absolute; right:70px; top:20px;   '><img src='save_but.png'></a>			
+				<a href="Javascript: change_slide(4);" style='position:absolute; right:15px; top:20px;   '><img src='round_close.png'></a>	
 			</div>
 
 <!-- slide 4 - MAIN FRAME-->
@@ -240,9 +241,9 @@ input {padding:0px; width:250px; height:35px; }
 
 				<img src='home_footer.png' width=100% style='position:absolute; left:0px; bottom:0px;'>
 
-				<div id="weather_show" style='border:1px solid gray; position:absolute; left:10px; top:425px; width:80px; height:80px; display:block; z-index:91; text-align:center; background-color:white; display:none; color:gray;'>20 C<br>Mostly Cloudy</div>
+				<div id="weather_show" style='background:URL(weather_pop.png);position:absolute; left:10px; top:425px; width:150px; height:80px; display:block; z-index:91; text-align:center; display:none; color:gray;'>20 C<br>Mostly Cloudy</div>
 
-				<div id="timer_div" style='border:1px solid gray; position:absolute; left:200px; top:425px; width:150px; height:80px; display:block; z-index:92; text-align:center; background-color:white; display:none; color:gray;'>მიუთითეთ დრო<br><input type=text size=5 value="08:00" id="timer_time" style='width:60px;' onblur="show_timer();"></div>
+				<div id="timer_div" style='background:URL(timer_pop.png); position:absolute; left:200px; top:425px; width:150px; height:80px; display:block; z-index:92; text-align:center; background-color:white; display:none; color:gray;'>დრო<br><input type=text size=5 value="08:00" id="timer_time" style='width:60px;' onblur="show_timer();"></div>
 
 				<a href='Javascript: show_weather();' style=' position:absolute; left:10px; top:505px; width:50px; height:50px; display:block; z-index:90;'></a>
 
