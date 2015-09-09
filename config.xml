@@ -2,13 +2,17 @@
 
 <widget xmlns     = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.designge.dresco"
+        id        = "com.dresco.*"
 	    versionCode="57" 
         version   = "1.0.1"
 		package="com.designge.dresco"
 		>
     <name>Dresco</name>
 	<icon src="icon.png" />
+
+	<icon src="icon-72.png" gap:platform="ios" width="72" height="72" />
+	<icon src="icon-57.png" gap:platform="ios" width="57" height="57" />
+
     <description>
       asdasd
     </description>
@@ -17,7 +21,7 @@
     <author href="http://design.ge" email="uabashidze@gmail.com">
         Cyborg-Mcloud
     </author>
-<icon src="icon.png" />
+
  <gap:platform name="ios" />
 <gap:platform name="android" />
 
