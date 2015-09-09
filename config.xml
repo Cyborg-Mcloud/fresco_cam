@@ -2,10 +2,10 @@
 
 <widget xmlns     = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.dresco.fresco"
+        id        = "com.fresco.dresco"
 	    versionCode="57" 
         version   = "1.0.1"
-		package="com.dresco.fresco"
+		package="com.fresco.dresco"
 		>
     <name>Dresco</name>
 	<icon src="icon.png" />
@@ -38,32 +38,49 @@
 
     </plugins>
 	<feature name="App">
-	  <param name="android-package" value="com.dresco.fresco"/>
+	  <param name="android-package" value="com.fresco.dresco"/>
+	  <param name="ios-package" value="com.fresco.dresco"/>
 	</feature>
 
     <feature name="Camera">
         <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+		<plugin name="ios-package" value="CDVCamera" />
+
     </feature>
     <feature name="File">
         <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+		<param name="ios-package" value="CDVFile" />
     </feature>
     <feature name="Capture">
         <param name="android-package" value="org.apache.cordova.mediacapture.Capture" />
+		<plugin name="ios-package" value="CDVCapture" />
     </feature>
     <feature name="FileTransfer">
         <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+		<plugin name="ios-package" value="CDVFileTransfer" />
     </feature>
 	<feature name="Notification">
 		<param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+		    <param name="ios-package" value="CDVNotification" />
 	</feature>
 	<feature name="Vibration">
 		<param name="android-package" value="org.apache.cordova.vibration.Vibration" />
 	</feature>
 
-	<feature name="Notification">
-    <param name="ios-package" value="CDVNotification" />
-</feature>
 
+ <feature name="LocalNotification">
+        <param name="android-package" value="de.appplant.cordova.plugin.localnotification.LocalNotification"/>
+        <param name="ios-package" value="APPLocalNotification"/>
+    </feature>
+
+
+   <feature name="SplashScreen">
+
+		<plugin name="android-package" value="org.apache.cordova.SplashScreen"/>
+
+		<param name="ios-package" value="CDVSplashScreen"/>
+        <param name="onload" value="true"/>
+    </feature>
 
 <feature name="http://api.phonegap.com/1.0/camera"/>
 <feature name="http://api.phonegap.com/1.0/file"/>
@@ -80,5 +97,7 @@
 <gap:plugin name="org.apache.cordova.network-information" />
 <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
 
+  <gap:splash src="splash.png" />
+    <gap:splash src="splash.png"  width="640" height="960" />
 
 </widget>
