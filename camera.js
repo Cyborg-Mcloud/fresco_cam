@@ -42,6 +42,11 @@ function rotateme()
 	myrot+=3.14/2;
 	redraw();
 	console.log(myrot);
+	ctx.save(); 
+	ctx.translate(355, 0); 
+	ctx.rotate(myrot); 
+	ctx.drawImage(largeImage, 0, 0, 600, 355); 		
+	ctx.restore();
 	}
 
 function redraw()
