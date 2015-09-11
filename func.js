@@ -250,7 +250,9 @@ function show_styles()
 		{
 		document.getElementById("mystyle").style.display="none";
 		stvis=0;
+		console.log("daxurva");
 		suggestme();
+		document.getElementById("mystyle").style.display="none";
 		}
 	}
 

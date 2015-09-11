@@ -55,7 +55,13 @@ function rotateme()
 		ctx.translate(0, 0);}
 
 	ctx.rotate(myrot); 
-	ctx.drawImage(largeImage, 0, 0, 600, 355); 		
+
+	if (myrot==3.14/2 || myrot==(3.14+3.14/2))
+		{	ctx.drawImage(largeImage, 0, 0, 600, 355); }
+	else
+		{ctx.drawImage(largeImage, 0, 0, 355, 600); }
+
+		
 	ctx.restore();
 	}
 
