@@ -76,7 +76,7 @@ function show_timer()
 		console.log(now);
 		window.plugin.notification.local.schedule({
 		id:         "123123123123",  // A unique id of the notifiction
-		message:    "ახალი ჩაცმულობა მზად არის",  // The message that is displayed
+		message:    "დღის ჩაცმულობა",  // The message that is displayed
 		title:      "Dresco",  // The title of the message  
 		 at: sqej,
 		  every: "day",

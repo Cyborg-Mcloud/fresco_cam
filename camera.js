@@ -34,6 +34,13 @@ function onPhotoURISuccess(imageURI)
 	
     }
 
+var myrot=3.14/2;
+
+function rotateme()
+	{
+	myrot+=3.14/2;
+	}
+
 function redraw()
 {
 if (curslide==3)
@@ -42,7 +49,7 @@ if (curslide==3)
 		{	
 		ctx.save(); 
 		ctx.translate(355, 0); 
-		ctx.rotate(3.14/2); 
+		ctx.rotate(myrot); 
 		ctx.drawImage(largeImage, 0, 0, 600, 355); 		
 		ctx.restore();
 		}

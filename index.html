@@ -109,10 +109,11 @@ input {padding:0px; width:250px; height:35px; }
 <!-- PROFILE -->
 		<div id="slide_5" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;' onclick="window.scrollTo(0, 0);">
 			<img src='header.png' width='100%'>
+			
 			<center>
 			<table border=0 cellspacing=0 cellpadding=0 width=100%>
 				<tr>
-				<td align=center valign=middle width=60px><img src='uname_img.png'></td><td valign=middle><input type='text' style='border:0px; height:30px;' size=30 placeholder="სახელი გვარი" id='prof_uname'></td>
+				<td align=center valign=middle width=60px><img src='uname_img.png'></td><td valign=middle><input type='text' style='border:0px; height:30px;' size=30 placeholder="სახელი გვარი" id='prof_uname'> <a href="Javascript: change_slide(4);" style='float:right;  '><img src='round_close.png'></a>	</td>
 				</tr>
 				<tr><td>&nbsp;</td><td></td></tr>
 				<td align=center valign=middle><img src='eml_img.png'></td><td valign=middle><input type='text' style='border:0px;height:30px;' placeholder="ელ. ფოსტა" id='prof_email' size=30 ></d>
@@ -135,6 +136,7 @@ input {padding:0px; width:250px; height:35px; }
 			</table>
 			</center>
 			<center><a href='Javascript: save_prof();'><img src='but_save.png'></a><br>
+
 		</div>
 
 <!-- slide 3 - CAMERA SLIDE -->
@@ -167,16 +169,18 @@ input {padding:0px; width:250px; height:35px; }
 					</tr></table>
 			</div>
 
+			<a href="Javascript: rotateme();" style='position:absolute; right:20px; top:60px;   '><img src='rotate.png'></a>		
+
 			<img style="display:none;" id="largeImage" src="" width=100% src="sample.png" />
 
 					
 
 			<div style='position:absolute; left:0px; bottom:0px; height:78px; width:100%; background:URL(grn_footer.png);'>
 				<a href="Javascript: showprops();" style='position:absolute; left:20px; top:26px; '><img src='props.png'></a>			
-				<a href="Javascript: getPhoto(pictureSource.PHOTOLIBRARY);"  style='position:absolute; left:82px; top:25px;'><img src='album_sel.png'></a>
+				<a href="Javascript: getPhoto(pictureSource.PHOTOLIBRARY);"  style='position:absolute; left:62px; top:25px;'><img src='album_sel.png'></a>
 				<a href="Javascript: capturePhoto();" style='position:absolute; left:143px; top:7px;'><img src='photobut.png'></a>
 
-				<a href="Javascript: savedress();" style='position:absolute; right:85px; top:20px;   '><img src='save_but.png'></a>			
+				<a href="Javascript: savedress();" style='position:absolute; right:62px; top:20px;   '><img src='save_but.png'></a>			
 				<a href="Javascript: change_slide(4);" style='position:absolute; right:20px; top:20px;   '><img src='round_close.png'></a>	
 			</div>
 
@@ -215,7 +219,7 @@ input {padding:0px; width:250px; height:35px; }
 					<td  valign=top align=center>
 					
 						<div style='position:relative; width:210px; height:33px; margin:0px padding:0px; overflow:hidden; margin-top:5px; '>
-							<div id='chstyle_sel' style='position:absolute; left:0px; top:0px;  '>
+							<div id='chstyle_sel' style='position:absolute; left:0px; top:0px;' onclick="show_styles();">
 								<table border=0 cellspacing=0 cellpadding=0 width=440პხ>
 									<tr>
 									<td valign=middle width=110px align=center>კლასიკური</td>
