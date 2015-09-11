@@ -40,10 +40,20 @@ function rotateme()
 	{
 	ctx.clearRect(0, 0, 355, 600);
 	myrot+=3.14/2;
-	redraw();
+
+
 	console.log(myrot);
 	ctx.save(); 
-	ctx.translate(355, 0); 
+	if (myrot==3.14/2)
+		{ctx.translate(355, 0);}
+	else if  (myrot==3.14)
+		{ctx.translate(355, 600);}
+	else if (myrot==3.14+3.14/2)
+		{ctx.translate(0, 600);}
+	else if (myrot==6.28)
+		{myrot=0;
+		ctx.translate(0, 0);}
+
 	ctx.rotate(myrot); 
 	ctx.drawImage(largeImage, 0, 0, 600, 355); 		
 	ctx.restore();
