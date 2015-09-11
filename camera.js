@@ -38,6 +38,7 @@ var myrot=3.14/2;
 
 function rotateme()
 	{
+	ctx.clearRect(0, 0, 355, 600);
 	myrot+=3.14/2;
 	redraw();
 	console.log(myrot);

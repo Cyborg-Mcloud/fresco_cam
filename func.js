@@ -242,11 +242,13 @@ var stvis=0;
 function show_styles()
 	{
 	if (stvis==0)
-		{document.getElementById("mystyle").style.display="block";
+		{
+		document.getElementById("mystyle").style.display="block";
 		stvis=1;
 		}
 	else
-		{document.getElementById("mystyle").style.display="none";
+		{
+		document.getElementById("mystyle").style.display="none";
 		stvis=0;
 		suggestme();
 		}
