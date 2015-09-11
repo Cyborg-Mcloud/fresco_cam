@@ -39,6 +39,7 @@ var myrot=3.14/2;
 function rotateme()
 	{
 	myrot+=3.14/2;
+	redraw();
 	}
 
 function redraw()
