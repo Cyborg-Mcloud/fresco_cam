@@ -78,7 +78,7 @@ if (curslide==3)
 		ctx.restore();
 		}
 	else
-		{	ctx.drawImage(largeImage, 25, 0);}
+		{	ctx.drawImage(largeImage, 0, 0);}
 	
 	setTimeout("redraw();", 1000);
 	}
