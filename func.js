@@ -304,19 +304,10 @@ function mdown(e, cb)
 	{
 	curbox=cb;
 		mclicked=1;
-		//if (e.offsetX) {
-//			mstx = e.offsetX;
-//			msty = e.offsetY;
-//		}
-//		else if (e.layerX) {
-//			mstx = e.layerX;
-//			msty = e.layerY;
-		
-		//}
-mstx=e.changedTouches[0].clientX ;
-msty=e.changedTouches[0].clientY ;
+	mstx=e.changedTouches[0].clientX ;
+	msty=e.changedTouches[0].clientY ;
 
-	document.getElementById("infodiv").innerHTML=mstx;
+//	document.getElementById("infodiv").innerHTML=mstx;
 	}
 
 function mup(e)
@@ -325,15 +316,10 @@ function mup(e)
 	
 		if (mclicked==1)
 			{
-			if (e.offsetX) {
-					mex = e.offsetX;
-					mey = e.offsetY;
-				}
-				else if (e.layerX) {
-					mex = e.layerX;
-					mey = e.layerY;
-				}
-			document.getElementById("infodiv").innerHTML=mstx+ " - "+mex;
+			mex= e.changedTouches[0].clientX ;
+			mey= e.changedTouches[0].clientY ;
+
+		//	document.getElementById("infodiv").innerHTML=mstx+ " - "+mex;
 			}
 		mclicked=0;
 
@@ -347,27 +333,19 @@ function mmove(e)
 	var mright=0;
 	if (mclicked==1)
 		{
-//		if (e.offsetX) {
-//				mex = e.offsetX;
-//				mey = e.offsetY;
-//			}
-//			else if (e.layerX) {
-//				mex = e.layerX;
-//				mey = e.layerY;
-//}
 
-mex= e.changedTouches[0].clientX ;
-mey= e.changedTouches[0].clientY ;
+		mex= e.changedTouches[0].clientX ;
+		mey= e.changedTouches[0].clientY ;
 
 		raznica=mex-mstx;
-				document.getElementById("infodiv").innerHTML=mstx+ " - "+mex+" = "+raznica + " c:"+curbox;
-		if (raznica>40)
+		//		document.getElementById("infodiv").innerHTML=mstx+ " - "+mex+" = "+raznica + " c:"+curbox;
+		if (raznica>45)
 			{
 			mstx=mex;
 
 			mleft=1;
 			}
-		else	if (raznica<-40)
+		else	if (raznica<-45)
 			{				
 			mstx=mex;
 
