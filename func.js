@@ -290,3 +290,99 @@ function closeprops()
 	{
 	document.getElementById("propsover").style.display="none";
 	}
+
+
+
+var mstx=0;
+var msty=0;
+var mex=0;
+var mey=0;
+var mclicked=0;
+var curbox=0;
+
+function mdown(e, cb)
+	{
+	curbox=cb;
+		mclicked=1;
+		if (e.offsetX) {
+			mstx = e.offsetX;
+			msty = e.offsetY;
+		}
+		else if (e.layerX) {
+			mstx = e.layerX;
+			msty = e.layerY;
+		}
+	document.getElementById("infodiv").innerHTML=mstx;
+	}
+
+function mup(e)
+	{
+	var a,b,c;
+	
+		if (mclicked==1)
+			{
+			if (e.offsetX) {
+					mex = e.offsetX;
+					mey = e.offsetY;
+				}
+				else if (e.layerX) {
+					mex = e.layerX;
+					mey = e.layerY;
+				}
+			document.getElementById("infodiv").innerHTML=mstx+ " - "+mex;
+			}
+		mclicked=0;
+
+	}
+
+
+function mmove(e)
+	{		
+	var raznica=0;
+	var mleft=0;
+	var mright=0;
+	if (mclicked==1)
+		{
+		if (e.offsetX) {
+				mex = e.offsetX;
+				mey = e.offsetY;
+			}
+			else if (e.layerX) {
+				mex = e.layerX;
+				mey = e.layerY;
+			}
+
+		raznica=mex-mstx;
+				document.getElementById("infodiv").innerHTML=mstx+ " - "+mex+" = "+raznica + " c:"+curbox;
+		if (raznica>40)
+			{
+			mstx=mex;
+
+			mleft=1;
+			}
+		else	if (raznica<-40)
+			{				
+			mstx=mex;
+
+			mright=1;
+			}
+		
+
+		if (mleft==1)
+			{
+			if (curbox==1)	{bpartleft();}
+			else	if (curbox==2)	{styleleft();}
+			else	if (curbox==3)	{ferileft();}
+			console.log("move left");
+			}
+
+		if (mright==1)
+			{
+			if (curbox==1)	{bpartright();}
+			else	if (curbox==2)	{styleright();}
+			else	if (curbox==3)	{feriright();}
+			console.log("move right");
+			}
+		}
+	
+	}
