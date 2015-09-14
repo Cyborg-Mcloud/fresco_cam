@@ -359,7 +359,7 @@ function mmove(e)
 			else	if (curbox==2)	{styleleft();}
 			else	if (curbox==3)	{ferileft();}
 			else	if (curbox==4)	{templeft();}
-			else	if (curbox==5)	{chstylelet();}
+			else	if (curbox==5)	{chstyleleft();}
 
 			console.log("move left");
 			}
@@ -369,7 +369,7 @@ function mmove(e)
 			if (curbox==1)	{bpartright();}
 			else	if (curbox==2)	{styleright();}
 			else	if (curbox==3)	{feriright();}
-			else	if (curbox==4)	{rempright();}
+			else	if (curbox==4)	{tempright();}
 			else	if (curbox==5)	{chstyleright();}
 
 			
