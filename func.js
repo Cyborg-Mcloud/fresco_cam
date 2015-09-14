@@ -313,8 +313,8 @@ function mdown(e, cb)
 //			msty = e.layerY;
 		
 		//}
-mstx= e.clientX || e.pageX || 0;
-msty= e.clientY || e.pageY || 0;
+mstx=e.changedTouches[0].clientX ;
+msty=e.changedTouches[0].clientY ;
 
 	document.getElementById("infodiv").innerHTML=mstx;
 	}
@@ -356,8 +356,8 @@ function mmove(e)
 //				mey = e.layerY;
 //}
 
-mex= e.clientX || e.pageX || 0;
-mey= e.clientY || e.pageY || 0;
+mex= e.changedTouches[0].clientX ;
+mey= e.changedTouches[0].clientY ;
 
 		raznica=mex-mstx;
 				document.getElementById("infodiv").innerHTML=mstx+ " - "+mex+" = "+raznica + " c:"+curbox;
