@@ -264,7 +264,7 @@ input {padding:0px; width:250px; height:35px; }
 
 function fbshare()
 	{
-	window.open('https://www.facebook.com/dialog/share?app_id=839069399540892&display=popup&href=http://design.ge/fresco/fbshare.php&redirect_uri=http://design.ge/fresco/success.php', '_system');
+	window.open('https://www.facebook.com/dialog/share?app_id=839069399540892&display=popup&href=http://design.ge/fresco/fbshare.php?img='+curfilename+'&redirect_uri=http://design.ge/fresco/success.php', '_system');
 	}
 </script>
 
@@ -484,6 +484,9 @@ else
 	{
 	selchstyle=2;
 	}
+
+var curfilename="";
+
 function suggestme()
 	{
 
@@ -520,10 +523,10 @@ function suggestme()
 		{
 		console.log("marto zeda: "+b[1]);
 		document.getElementById("fullbody").style.display="none";
-				document.getElementById("partial").style.display="block";
+		document.getElementById("partial").style.display="block";
 		document.getElementById("zedatani").src="http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png";
 
-
+		curfilename=myid+"_"+b[0]+".png";
 		for (i=0;i<a.length ;i++ )
 			{
 			c=a[i].split(":");
@@ -552,6 +555,7 @@ function suggestme()
 		document.getElementById("fullbody").style.display="block";
 		document.getElementById("partial").style.display="none";
 		document.getElementById("mainimg").src="http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png";
+		curfilename=myid+"_"+b[0]+".png";
 		}
 
 	focussel("chstyle_sel",chstylewidth, selchstyle);
