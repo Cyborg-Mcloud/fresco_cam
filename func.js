@@ -1,7 +1,7 @@
 var chstylewidth=110;
 var bpartwidth=130;
 var stylewidth=110;
-var colwidth=90;
+var colwidth=100;
 var tempwidth=90;
 var maxcolor=6;
 var maxtemp=5;
