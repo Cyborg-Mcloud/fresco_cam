@@ -255,14 +255,18 @@ input {padding:0px; width:250px; height:35px; }
 				<div style='position:absolute; left:0px; bottom:0px; height:78px; width:100%; background:URL(home_footer.png);'>
 					<a href='Javascript: show_weather();' style=' position:absolute; left:30px; top:25px; display:block; z-index:90;'><img src='sun.png'></a>
 					<a href='Javascript: show_timer();' style=' position:absolute; right:33px; top:25px;  display:block; z-index:90;'><img src='timer.png'></a>
-					<a href='#' style=' position:absolute; left:85px; top:22px;  display:block; z-index:90;'><img src='share.png'></a>
+					<a href='Javascript: fbshare();' style=' position:absolute; left:95px; top:22px;  display:block; z-index:90;'><img src='share.png'></a>
 
 				</div>
-
-				
-
-			
 			</div>
+	
+<script>
+
+function fbshare()
+	{
+	window.open('https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=http://design.ge/fresco/imgs/205397887_37.png&redirect_uri=http://design.ge/fresco/succes.php', '_system');
+	}
+</script>
 
 
 <!-- --------------------------------- -->
