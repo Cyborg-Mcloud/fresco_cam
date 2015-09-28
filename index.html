@@ -212,6 +212,8 @@ input {padding:0px; width:250px; height:35px; }
 						<img src='slide_1.png'  style='position:absolute; left:150px; top:280px; z-index:78; height:140px;' id="fexsacmeli">
 						<img src='ujra.png' width=100% style='position:absolute; left:0px; top:280px; height:140px; z-index:79; '>
 					</div>		
+				
+					<a href='Javasript: gotoedit(); ' style='position:absolute; right:20px; top:20px;'><img src='edit.png'></a>
 				</div>
 				<div id='mystyle' style='display:none; position:absolute; left:35px; top:80px; background:URL(round_foni.png); width:280px;  text-align:center; height:37px; z-index:81;'>
 				<table width=100% border=0 cellspacing=0 cellpadding=0> 
@@ -268,7 +270,25 @@ function fbshare()
 	alert("share file: http://design.ge/fresco/fbshare.php?img="+curfilename);
 	window.open('https://www.facebook.com/dialog/share?app_id=839069399540892&display=popup&href=http://design.ge/fresco/fbshare.php?img='+curfilename+'&redirect_uri=http://design.ge/fresco/success.php', '_system');
 	}
+
+function gotoedit()
+	{
+	curedit=cursug;
+	change_slide(6);
+	}
 </script>
+
+
+<!-- ------------------------------ GARDEROBI -->
+			<div id="slide_6" style='width:100%;height:100%; visibility:hidden; position:absolute; background-color:#f6f6f6; left:0px; top:0px;' onclick="window.scrollTo(0, 0);">
+				<img src='white_logo.png' width='100%'>
+				<div style='width:100%; height:46px; display:block; background:URL(mcvane.png);'>
+					<a href='Javascript: change_slide(3);' style='position:absolute; left:15px; top:15px;'><img src='new_photo.png'></a>
+				</div>
+			
+
+
+			</div>
 
 
 <!-- --------------------------------- -->
