@@ -1,14 +1,19 @@
+var garstylewidth=110;
 var chstylewidth=110;
 var bpartwidth=130;
 var stylewidth=110;
 var colwidth=100;
 var tempwidth=90;
+
+
 var maxcolor=6;
 var maxtemp=5;
 var maxstyle=4;
 var maxbpart=4;
 var maxchstyle=4;
+var maxgarstyle=4;
 
+var selgarstyle=1;
 var selbpart=1;
 var selstyle=1;
 var selcolor=1;
@@ -105,7 +110,7 @@ function show_weather()
 	}
 
 function change_slide(newslide)
-{
+	{
 	document.getElementById("slide_"+curslide).style.visibility="hidden";
 	curslide=newslide;
 	document.getElementById("slide_"+curslide).style.visibility="visible";
@@ -118,7 +123,11 @@ function change_slide(newslide)
 		{
 		req_mylib();
 		}
-}
+	else if (curslide==6)
+		{
+		focussel("garstyle_sel",garstylewidth, selgarstyle);
+		}
+	}
 
 function req_mylib()
 	{
@@ -177,6 +186,25 @@ function styleleft()
 		{
 		selstyle-=1;
 		focussel("style_sel",stylewidth, selstyle);
+		}
+	}
+
+
+function chgarright()
+	{
+	if (selgarstyle<maxgarstyle)
+		{
+		selgarstyle+=1;
+		focussel("garstyle_sel",garstylewidth, selgarstyle);
+		}
+	}
+
+function chgarleft()
+	{
+	if (selgarstyle>1)
+		{
+		selgarstyle-=1;
+		focussel("garstyle_sel",garstylewidth, selsgartyle);
 		}
 	}
 
@@ -356,10 +384,11 @@ function mmove(e)
 		if (mleft==1)
 			{
 			if (curbox==1)	{bpartleft();}
-			else	if (curbox==2)	{styleleft();}
-			else	if (curbox==3)	{ferileft();}
-			else	if (curbox==4)	{templeft();}
-			else	if (curbox==5)	{chstyleleft();}
+			else if (curbox==2)	{styleleft();}
+			else if (curbox==3)	{ferileft();}
+			else if (curbox==4)	{templeft();}
+			else if (curbox==5)	{chstyleleft();}
+			else if (curbox==6)	{chgarleft();}
 
 			console.log("move left");
 			}
@@ -367,11 +396,11 @@ function mmove(e)
 		if (mright==1)
 			{
 			if (curbox==1)	{bpartright();}
-			else	if (curbox==2)	{styleright();}
-			else	if (curbox==3)	{feriright();}
-			else	if (curbox==4)	{tempright();}
-			else	if (curbox==5)	{chstyleright();}
-
+			else if (curbox==2)	{styleright();}
+			else if (curbox==3)	{feriright();}
+			else if (curbox==4)	{tempright();}
+			else if (curbox==5)	{chstyleright();}
+			else if (curbox==6)	{chgarright();}
 			
 			console.log("move right");
 			}

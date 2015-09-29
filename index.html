@@ -286,9 +286,34 @@ function gotoedit()
 			<div id="slide_6" style='width:100%;height:100%; visibility:hidden; position:absolute; background-color:#f6f6f6; left:0px; top:0px;' onclick="window.scrollTo(0, 0);">
 				<img src='white_logo.png' width='100%'>
 				<div style='position:absolute; top:30px; left:0px; width:100%; height:46px; display:block; background:URL(mcvane.png);'>
-					<a href='Javascript: change_slide(3);' style='position:absolute; left:15px; top:15px;'><img src='new_photo.png'></a>
+					<a href='Javascript: change_slide(3);' style='position:absolute; left:15px; top:7px;'><img src='new_photo.png'></a>
 
-					<a href='Javascript: change_slide(4);' style='position:absolute; left:15px; top:15px;'><img src='round_close.png'></a>
+					<a href='Javascript: change_slide(4);' style='position:absolute; right:15px; top:7px;'><img src='round_close.png'></a>
+
+					<div id='mygarstyle' style='position:absolute; left:35px; top:80px; background:URL(round_foni.png); width:280px;  text-align:center; height:37px; z-index:81;'>
+					<table width=100% border=0 cellspacing=0 cellpadding=0> 
+						<tr><td valign=middle width=30px><a href='Javascript: chgarleft();' style='display:block; vertical-align:middle;  text-align:center; width:30px; height:22px; padding-top:8px;'><img src='left_but.png'></a></td>
+						<td  valign=top align=center>
+						
+							<div style='position:relative; width:210px; height:33px; margin:0px padding:0px; overflow:hidden; margin-top:5px; '>
+								<div id='garstyle_sel' style='position:absolute; left:0px; top:0px;'>
+									<table border=0 cellspacing=0 cellpadding=0 width=440პხ>
+										<tr>
+										<td valign=middle width=110px align=center><div>კლასიკური</div></td>
+										<td width=110px align=center  valign=middle><div>სპორტული</div></td>
+										<td width=110px align=center valign=middle><div>თავისუფალი</div></td>
+										<td width=110px align=center valign=middle><div>საცურაო</div></td>
+										</tr>
+									</table>
+								</div>
+								<img src='white_overlay.png' style=' width:100%; height:30px; position:absolute; left:0px; top:0px;'>
+								<div style='width:210px; height:33px; position:absolute; left:0px; top:0px;' ontouchstart="mdown(event, 6);"  ontouchmove="mmove(event,6);" ontouchend="mup(event,6);"></div>
+							</div>
+						</td>
+						<td valign=middle  width=30px><a href='Javascript: chgarright();' style='display:block; text-align:center; vertical-align:middle;  height:22px; padding-top:8px; width:30px;  '><img src='right_but.png'></a></td>
+						</tr>
+					</table>
+					</div>
 				</div>
 			
 
