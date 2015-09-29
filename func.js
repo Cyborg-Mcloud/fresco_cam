@@ -204,7 +204,7 @@ function chgarleft()
 	if (selgarstyle>1)
 		{
 		selgarstyle-=1;
-		focussel("garstyle_sel",garstylewidth, selsgartyle);
+		focussel("garstyle_sel",garstylewidth, selgartyle);
 		}
 	}
 
