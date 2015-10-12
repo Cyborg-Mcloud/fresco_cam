@@ -105,5 +105,5 @@
 
   <gap:splash src="splash.png" />
     <gap:splash src="splash.png"  width="640" height="960" />
-
+<gap:splash src="Default-568h@2x.png"  width="640" height="1136" />
 </widget>
