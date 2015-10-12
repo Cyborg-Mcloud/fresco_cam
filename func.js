@@ -178,7 +178,7 @@ function styleright()
 		selstyle+=1;
 		focussel("style_sel",stylewidth, selstyle);
 		}
-	}
+	}									
 
 function styleleft()
 	{
