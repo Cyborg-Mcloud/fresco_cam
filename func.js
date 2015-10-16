@@ -124,6 +124,8 @@ function change_slide(newslide)
 			largeImage.src="sample.png";
 			}
 		document.getElementById("largeImage").src=largeImage.src;
+
+
 		focussel("bpart_sel",bpartwidth, selbpart);
 		focussel("style_sel",stylewidth, selstyle);
 		focussel("feri_sel",colwidth, selcolor);
@@ -228,6 +230,7 @@ function feriright()
 	if (selcolor<maxcolor)
 		{
 		selcolor+=1;
+		console.log("gadartva(color): "+selbpart+"."+selstyle+"."+selcolor+"."+seltemp);
 		focussel("feri_sel",colwidth, selcolor);
 		}
 	}
@@ -237,6 +240,7 @@ function ferileft()
 	if (selcolor>1)
 		{
 		selcolor-=1;
+		console.log("gadartva(color): "+selbpart+"."+selstyle+"."+selcolor+"."+seltemp);
 		focussel("feri_sel",colwidth, selcolor);
 		}
 	}
@@ -266,6 +270,7 @@ function chstyleright()
 	if (selchstyle<maxchstyle)
 		{
 		selchstyle+=1;
+	
 		focussel("chstyle_sel",chstylewidth, selchstyle);
 		}
 	}
@@ -303,6 +308,7 @@ function tempright()
 	if (seltemp<maxtemp)
 		{
 		seltemp+=1;
+				console.log("gadartva(temp): "+selbpart+"."+selstyle+"."+selcolor+"."+seltemp);
 		focussel("temp_sel",tempwidth, seltemp);
 		}
 	}
@@ -312,6 +318,7 @@ function templeft()
 	if (seltemp>1)
 		{
 		seltemp-=1;
+						console.log("gadartva(temp): "+selbpart+"."+selstyle+"."+selcolor+"."+seltemp);
 		focussel("temp_sel",tempwidth, seltemp);
 		}
 	}
