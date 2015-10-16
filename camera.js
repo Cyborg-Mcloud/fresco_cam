@@ -114,6 +114,7 @@ if (curslide==3)
 
 function savedress()
 	{
+	var c=document.getElementById("mycan");
 	if (editing==0)
 		{
 		console.log("new saved");
@@ -133,6 +134,7 @@ function savedress()
 	else
 		{
 		console.log("editing saved:"+editing);
+		
 		var img1= c.toDataURL("image/png");
 		url='http://design.ge/fresco/upload_dress.php?saveme=123&editid='+editing;
 		gamehttp.open('POST',url,true);

@@ -604,11 +604,14 @@ function suggestme()
 	var tc=0;
 	for (i=0;i<a.length ;i++ )
 		{
-		b=a[i].split(":");
-		if (b[2]==selchstyle && (b[1]==1 || b[1]==2))
+		if (a[i]!="")
 			{
-			temp[tc]=i;
-			tc++;
+			b=a[i].split(":");
+			if (b[2]==selchstyle && (b[1]==1 || b[1]==2))
+				{
+				temp[tc]=i;
+				tc++;
+				}
 			}
 		}
 
