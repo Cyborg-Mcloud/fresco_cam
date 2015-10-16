@@ -9,7 +9,7 @@ var tempwidth=90;
 var maxcolor=6;
 var maxtemp=5;
 var maxstyle=4;
-var maxbpart=4;
+var maxbpart=2;
 var maxchstyle=4;
 var maxgarstyle=4;
 
