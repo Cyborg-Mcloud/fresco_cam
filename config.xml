@@ -2,10 +2,10 @@
 
 <widget xmlns     = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.fresco.dresco"
+        id        = "com.designge.dresco"
 	    versionCode="62" 
         version   = "1.1.2"
-		package="com.fresco.dresco"
+		package="com.designge.dresco"
 		>
     <name>Dresco</name>
 	<icon src="icon.png" />
@@ -24,8 +24,8 @@
 
  <gap:platform name="ios" />
 <gap:platform name="android" />
-
 <preference name="target-device" value="handset" /> 
+
 <preference name="phonegap-version" value="3.7.0" /> 
 <preference name="orientation" value="portrait" />
 <!--<preference name="fullscreen" value="true" />-->
@@ -38,8 +38,8 @@
 
     </plugins>
 	<feature name="App">
-	  <param name="android-package" value="com.fresco.dresco"/>
-	  <param name="ios-package" value="com.fresco.dresco"/>
+	  <param name="android-package" value="com.designge.dresco"/>
+	  <param name="ios-package" value="com.designge.dresco"/>
 	</feature>
 
     <feature name="Camera">
@@ -73,7 +73,6 @@
 
   </feature>
 
-
  <feature name="LocalNotification">
         <param name="android-package" value="de.appplant.cordova.plugin.localnotification.LocalNotification"/>
         <param name="ios-package" value="APPLocalNotification"/>
@@ -105,5 +104,5 @@
 
   <gap:splash src="splash.png" />
     <gap:splash src="splash.png"  width="640" height="960" />
-<gap:splash src="Default-568h@2x.png"  width="640" height="1136" />
+
 </widget>

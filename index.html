@@ -316,7 +316,8 @@ function gotoedit()
 					</div>
 				</div>
 				
-				<div style='position:absolute; left:0px; top:64px; width:100%; border:1px solid red;'>
+				<div style='position:absolute; left:0px; top:54px; width:100%; border:1px solid red;' id='garder'>
+
 					<table width=100% cellspacing=0 cellpadding=0>
 					<tr>
 						<Td width=50% height=165px >
@@ -555,6 +556,41 @@ function recv_ans()
 		}
 	}
 
+function show_garderob()
+{
+
+	var mst=
+
+	document.getElementById("garder").innerHTML="<table width=100% cellspacing=0 cellpadding=0>";
+
+	a=mylib.split("|");
+
+	var temp=new Array();
+	var tc=0;
+	var tabl=0;
+	for (i=0;i<a.length ;i++ )
+		{
+		b=a[i].split(":");
+		if (b[2]==selgarstyle)
+			{
+			if (tabl==0)
+				{document.getElementById("garder").innerHTML+="<tr>";
+				}
+				
+			document.getElementById("garder").innerHTML+="<Td width=50% height=165px ><div style='position:relative; height:165px; width:175px; overflow:hidden;'><img src='http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png' width=175px><img src='garderob_over.png' style='position:absolute; left:0px;top:0px;'></div></td>";
+			
+			if (tabl==1)
+				{document.getElementById("garder").innerHTML+="</tr>";
+				tabl=0;
+				}
+			else {tabl=1;}
+			
+			temp[tc]=i;
+			tc++;
+			}
+		}
+					
+}
 
 var curprog="";
 var curtemp=0;
