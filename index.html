@@ -202,12 +202,22 @@ input {padding:0px; width:250px; height:35px; }
 						<img src='mask.png' width=100% style='position:absolute; left:0px; top:0px; height:420px; z-index:79; '>
 					</div>
 				
-					<div id='partial' style='width:100%; height:420px; overflow:hidden; position:absolute; left:0px; top:0px;'>
+					<!--<div id='partial' style='width:100%; height:420px; overflow:hidden; position:absolute; left:0px; top:0px;'>
 						<img src='slide_1.png'  style='position:absolute; left:150px; top:0px; z-index:78; height:140px;' id="zedatani">
 						<img src='ujra.png' width=100% style='position:absolute; left:0px; top:0px; height:140px; z-index:79; '>
 
 						<img src='slide_1.png' style='position:absolute; left:150px; top:140px;  z-index:78; height:140px;' id="qvedatani">
 						<img src='ujra.png' width=100% style='position:absolute; left:0px; top:140px; height:140px; z-index:79; '>
+
+						<img src='slide_1.png'  style='position:absolute; left:150px; top:280px; z-index:78; height:140px;' id="fexsacmeli">
+						<img src='ujra.png' width=100% style='position:absolute; left:0px; top:280px; height:140px; z-index:79; '>
+					</div>		-->
+
+					<div id='partial' style='width:100%; height:420px; overflow:hidden; position:absolute; left:0px; top:0px;'>
+						<img src='slide_1.png'  style='position:absolute; left:170px; top:0px; z-index:78; height:280px;' id="zedatani">
+						<img src='mask.png' width=100% style='position:absolute; left:0px; top:0px; height:280px; z-index:79; '>
+
+
 
 						<img src='slide_1.png'  style='position:absolute; left:150px; top:280px; z-index:78; height:140px;' id="fexsacmeli">
 						<img src='ujra.png' width=100% style='position:absolute; left:0px; top:280px; height:140px; z-index:79; '>
@@ -626,54 +636,59 @@ function suggestme()
 	if (tc==0)
 		{
 		console.log("no such found");
-		cursug=parseInt(Math.random()*(a.length));
+		cursug=parseInt(Math.random()*(a.length-1));
 		}
 	else
 		{
 		cursug=temp[parseInt(Math.random()*(temp.length))];
 		}
-	
-	
 	console.log("suggestion: "+cursug);
-	
 	b=a[cursug].split(":");
 
-	if (b[1]==3)
+	var fexfound=0;
+	for (i=0;i<a.length ;i++ )
 		{
-		console.log("marto zeda: "+b[1]);
+		if (a[i]!="")
+			{
+			c=a[i].split(":");
+			if (c[2]==selchstyle && c[1]==2)
+				{
+				fexfound=i;
+				i=a.length;
+				}
+			}
+		}
+
+	if (fexfound==1)
+		{
+		console.log("zeda da fexi: "+b[1]);
 		document.getElementById("fullbody").style.display="none";
 		document.getElementById("partial").style.display="block";
-		document.getElementById("zedatani").src="http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png";
+		document.getElementById("zedatani").src="http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png?ra="+parseInt(Math.random()*10000);
 
 		curfilename=myid+"_"+b[0]+".png";
-		for (i=0;i<a.length ;i++ )
-			{
-			c=a[i].split(":");
-			if (c[1]==3)
-				{
-				console.log("qveda: "+c[1]);
-				document.getElementById("qvedatani").src="http://design.ge/fresco/imgs/"+myid+"_"+c[0]+".png?ra="+parseInt(Math.random()*10000);
-				i=a.length;
-				}
-			}
+//		for (i=0;i<a.length ;i++ )
+//			{
+//			c=a[i].split(":");
+//			if (c[1]==3)
+//				{
+//				console.log("qveda: "+c[1]);
+//				document.getElementById("qvedatani").src="http://design.ge/fresco/imgs/"+myid+"_"+c[0]+".png?ra="+parseInt(Math.random()*10000);
+//				i=a.length;
+//				}
+//			}
 		
-		for (i=0;i<a.length ;i++ )
-			{
-			c=a[i].split(":");
-			if (c[1]==4)
-				{
-				console.log("fexs: "+c[1]);
-				document.getElementById("fexsacmeli").src="http://design.ge/fresco/imgs/"+myid+"_"+c[0]+".png?ra="+parseInt(Math.random()*10000);
-				i=a.length;
-				}
-			}
+		console.log("fexs: "+c[1]);
+		document.getElementById("fexsacmeli").src="http://design.ge/fresco/imgs/"+myid+"_"+c[0]+".png?ra="+parseInt(Math.random()*10000);
+
+				
 		}
 	else
 		{
 		console.log("mtliani: "+b[1]);
 		document.getElementById("fullbody").style.display="block";
 		document.getElementById("partial").style.display="none";
-		document.getElementById("mainimg").src="http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png";
+		document.getElementById("mainimg").src="http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png?ra="+parseInt(Math.random()*10000);
 		curfilename=myid+"_"+b[0]+".png";
 		}
 
