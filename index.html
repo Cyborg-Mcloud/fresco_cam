@@ -743,6 +743,35 @@ function suggestme()
 	focussel("chstyle_sel",chstylewidth, selchstyle);
 	}
 
+var curfex=0;
+function changeshoes()
+	{
+
+	a=mylib.split("|");
+
+	var temp=new Array();
+	var tc=0;
+	for (i=0;i<a.length ;i++ )
+		{
+		if (a[i]!="")
+			{
+			b=a[i].split(":");
+			if (b[2]==selchstyle && b[1]==2 )
+				{
+				temp[tc]=i;
+				tc++;
+				}
+			}
+		}
+
+	
+	curfex=temp[parseInt(Math.random()*(temp.length))];
+	c=a[curfex].split(":");
+	console.log("fexs: "+c[1]);
+	document.getElementById("fexsacmeli").src="http://design.ge/fresco/imgs/"+myid+"_"+c[0]+".png?ra="+parseInt(Math.random()*10000);
+
+	}
+
 var c = document.getElementById("mycan");
 var ctx = c.getContext("2d");
 
