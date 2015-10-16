@@ -183,7 +183,7 @@ input {padding:0px; width:250px; height:35px; }
 				<a href="Javascript: savedress();" style='position:absolute; right:62px; top:20px;   '><img src='save_but.png'></a>			
 				<a href="Javascript: change_slide(4);" style='position:absolute; right:20px; top:20px;   '><img src='round_close.png'></a>	
 			</div>
-
+</div>
 <!-- slide 4 - MAIN FRAME-->
 			<div id="slide_4" style='width:100%;height:100%; visibility:hidden; position:absolute; background-color:#f6f6f6; left:0px; top:0px;' onclick="window.scrollTo(0, 0);">
 				<img src='home_logo.png' width=100% style='position:absolute; left:0px; top:0px;'>
@@ -316,47 +316,9 @@ function gotoedit()
 					</div>
 				</div>
 				
-				<div style='position:absolute; left:0px; top:60px; width:100%; border:1px solid red;' id='garder'>
+				<div style='position:absolute; left:0px; top:64px; width:100%; border:1px solid red;' id='garder'>
 
-					<table width=100% cellspacing=0 cellpadding=0>
-					<tr>
-						<Td width=50% height=165px >
-							<div style='position:relative;'>
-								<img src="garderob_over.png" style='position:absolute; left:0px;top:0px;'>
-							</div>
-						</td>
-						<Td width=50% height=165px>
-							<div style='position:relative;'>
-								<img src="garderob_over.png" style='position:absolute; left:0px;top:0px;'>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<Td width=50% height=165px>
-							<div style='position:relative;'>
-								<img src="garderob_over.png" style='position:absolute; left:0px;top:0px;'>
-							</div>
-						</td>
-						<Td width=50% height=165px>
-							<div style='position:relative;'>
-								<img src="garderob_over.png" style='position:absolute; left:0px;top:0px;'>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<Td width=50% height=165px>
-							<div style='position:relative;'>
-								<img src="garderob_over.png" style='position:absolute; left:0px;top:0px;'>
-							</div>
-						</td>
-						<Td width=50% height=165px>
-							<div style='position:relative;'>
-								<img src="garderob_over.png" style='position:absolute; left:0px;top:0px;'>
-							</div>
-						</td>
-					</tr>
-
-					</table>
+					
 				</div>
 
 			</div>
@@ -585,7 +547,7 @@ function show_garderob()
 					{document.getElementById("garder").innerHTML+="<tr>";
 					}
 					
-				document.getElementById("garder").innerHTML+="<Td width=50% height=165px ><div style='position:relative; height:165px; width:175px; overflow:hidden;'><img src='http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png' width=175px><img src='garderob_over.png' style='position:absolute; left:0px;top:0px;'></div></td>";
+				document.getElementById("garder").innerHTML+="<Td width=50% height=165px ><div style='float:left; position:relative; height:165px; width:175px; overflow:hidden;'><img src='http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png' width=175px><img src='garderob_over.png' style='position:absolute; left:0px;top:0px;'></div></td>";
 				
 				if (tabl==1)
 					{document.getElementById("garder").innerHTML+="</tr>";
