@@ -126,6 +126,7 @@ function change_slide(newslide)
 	else if (curslide==6)
 		{
 		focussel("garstyle_sel",garstylewidth, selgarstyle);
+		show_garderob();
 		}
 	}
 
