@@ -190,6 +190,7 @@ function styleright()
 	if (selstyle<maxstyle)
 		{
 		selstyle+=1;
+			console.log("gadartva(style): "+selbpart+"."+selstyle+"."+selcolor+"."+seltemp);
 		focussel("style_sel",stylewidth, selstyle);
 		}
 	}									
@@ -199,6 +200,7 @@ function styleleft()
 	if (selstyle>1)
 		{
 		selstyle-=1;
+								console.log("gadartva(style): "+selbpart+"."+selstyle+"."+selcolor+"."+seltemp);
 		focussel("style_sel",stylewidth, selstyle);
 		}
 	}
@@ -209,6 +211,7 @@ function chgarright()
 	if (selgarstyle<maxgarstyle)
 		{
 		selgarstyle+=1;
+
 		focussel("garstyle_sel",garstylewidth, selgarstyle);
 		show_garderob();
 		}
@@ -280,6 +283,7 @@ function chstyleleft()
 	if (selchstyle>1)
 		{
 		selchstyle-=1;
+
 		focussel("chstyle_sel",chstylewidth, selchstyle);
 		}
 	}

@@ -614,10 +614,10 @@ function editimg(imgid)
 			b=a[i].split(":");
 			if (b[0]==imgid)
 				{
-				selbpart=b[1];
-				selstyle=b[2];
-				selcolor=b[3];
-				seltemp=b[4];
+				selbpart=parseInt(b[1]);
+				selstyle=parseInt(b[2]);
+				selcolor=parseInt(b[3]);
+				seltemp=parseInt(b[4]);
 				i=a.length;
 				console.log("set xelit: "+selbpart+"."+selstyle+"."+selcolor+"."+seltemp);
 				}
