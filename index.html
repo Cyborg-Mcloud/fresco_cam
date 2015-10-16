@@ -567,9 +567,9 @@ var editing=0;
 function editimg(imgid)
 	{
 	change_slide(3);
-	
+	console.log("edit: "+imgid);
 	editing=imgid;
-	largeImage.src  = "http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png";
+	largeImage.src  = "http://design.ge/fresco/imgs/"+myid+"_"+imgid+".png";
 	}
 
 var curprog="";
