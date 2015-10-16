@@ -29,7 +29,7 @@ function gotFileEntry(fileEntry)
 // SAVE SETTINGS
 function gotFileWriter(writer) 
 	{
-	writer.write(myid+";"+uname+";"+email+";"+persid+";"+gender+";"+mylib+";");
+	writer.write(myid+";"+uname+";"+email+";"+persid+";"+gender+";"+mylib+";"+alarmtime+";");
 	console.log("saved: "+myid+";"+uname+";"+email+";"+persid+";"+gender+";"+mylib+";"+alarmtime+";");
 	}
 

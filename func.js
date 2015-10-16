@@ -55,7 +55,7 @@ function startfunc()
 			}
 		}
 	}
-var tartime="08:00";
+
 var timvis=0;
 function show_timer()
 	{
@@ -88,6 +88,7 @@ function show_timer()
 		 at: sqej,
 		  every: "day",
 		});
+		WriteData();
 		window.scrollTo(0, 0);
 		}
 
