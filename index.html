@@ -672,6 +672,11 @@ function suggestme()
 		{
 		console.log("no such found");
 		cursug=parseInt(Math.random()*(a.length-1));
+		b=a[cursug].split(":");
+		if (b[1]!=1)
+			{
+			cursug=parseInt(Math.random()*(a.length-1));
+			}
 		}
 	else
 		{
