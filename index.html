@@ -178,7 +178,7 @@ input {padding:0px; width:250px; height:35px; }
 			<div style='position:absolute; left:0px; bottom:0px; height:78px; width:100%; background:URL(grn_footer.png);'>
 				<a href="Javascript: showprops();" style='position:absolute; left:20px; top:26px; '><img src='props.png'></a>			
 				<a href="Javascript: getPhoto(pictureSource.PHOTOLIBRARY);"  style='position:absolute; left:62px; top:25px;'><img src='album_sel.png'></a>
-				<a href="Javascript: capturePhoto();" style='position:absolute; left:143px; top:7px;'><img src='photobut.png'></a>
+				<a href="Javascript: editing=0; capturePhoto();" style='position:absolute; left:143px; top:7px;'><img src='photobut.png'></a>
 
 				<a href="Javascript: savedress();" style='position:absolute; right:62px; top:20px;   '><img src='save_but.png'></a>			
 				<a href="Javascript: change_slide(4);" style='position:absolute; right:20px; top:20px;   '><img src='round_close.png'></a>	
@@ -190,7 +190,7 @@ input {padding:0px; width:250px; height:35px; }
 
 				
 			
-				<a href='Javascript: change_slide(3);' style='position:absolute; left:22px; top:30px; width:50px; height:45px; display:block;'></a>
+				<a href='Javascript: editing=0; change_slide(3);' style='position:absolute; left:22px; top:30px; width:50px; height:45px; display:block;'></a>
 				
 				<a href='Javascript: show_styles();' style='position:absolute; left:110px; top:30px; width:50px; height:45px; display:block;'></a>
 				
@@ -286,7 +286,7 @@ function gotoedit()
 	{
 
 	curedit=cursug;
-		console.log("changing to 6: " + curedit);
+	console.log("changing to 6: " + curedit);
 	change_slide(6);
 	}
 </script>
@@ -296,7 +296,7 @@ function gotoedit()
 			<div id="slide_6" style='width:100%;height:100%; visibility:hidden; position:absolute; background-color:#f6f6f6; left:0px; top:0px;' onclick="window.scrollTo(0, 0);">
 				<img src='white_logo.png' width='100%'>
 				<div style='position:absolute; top:30px; left:0px; width:100%; height:46px; display:block; background:URL(mcvane.png);'>
-					<a href='Javascript: change_slide(3);' style='position:absolute; left:5px; top:6px;'><img src='new_photo.png'></a>
+					<a href='Javascript: editing=0; change_slide(3);' style='position:absolute; left:5px; top:6px;'><img src='new_photo.png'></a>
 
 					<a href='Javascript: change_slide(4);' style='position:absolute; right:5px; top:6px; '><img style='height:33px;' src='round_close.png'></a>
 
@@ -554,10 +554,16 @@ function show_garderob()
 				console.log("movedi: "+b[0]);
 				
 				if (tabl==0)
-					{document.getElementById("garder").innerHTML+="<tr>";
-					}
+					{document.getElementById("garder").innerHTML+="<tr>";}
 					
-				document.getElementById("garder").innerHTML+="<Td width=50% height=165px ><div style='float:left; position:relative; height:165px; width:175px; overflow:hidden;' onClick='Javascript: editimg("+b[0]+"); '><img src='http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png' width=175px><img src='garderob_over.png' style='position:absolute; left:0px;top:0px;'><a href='Javascript: remimg("+b[0]+"); ' style='display:block; z-index:80; position:absolute; left:20px; bottom:5px;'><img height=32px src='remove.png'></a><a href='Javascript: editimg("+b[0]+"); ' style='display:block; z-index:80; position:absolute; right:20px; bottom:5px;'><img height=32px  src='edit.png'></a></div></td>";
+				document.getElementById("garder").innerHTML+="<Td width=50% height=165px ><div style='float:left; position:relative; height:165px; width:175px; overflow:hidden;' onClick='Javascript: editimg("+b[0]+"); '><img src='http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png' width=175px><img src='garderob_over.png' style='position:absolute; left:0px;top:0px;'><a href='Javascript: remimg("+b[0]+"); ' style='display:block; z-index:80; position:absolute; left:20px; bottom:5px;'><img height=32px src='remove.png'></a><a href='Javascript: editimg("+b[0]+"); ' style='display:block; z-index:80; position:absolute; right:20px; bottom:5px;'><img height=32px  src='edit.png'></a>";
+				
+				if (b[1]==2)
+					{document.getElementById("garder").innerHTML+="<img height=30px src='shoes.png' style='display:block; z-index:80; position:absolute; right:90px; bottom:5px;'>";
+					}
+
+
+				document.getElementById("garder").innerHTML+="</div></td>";
 				
 				if (tabl==1)
 					{document.getElementById("garder").innerHTML+="</tr>";
@@ -584,7 +590,26 @@ function remimg(imgid)
 
 function editimg(imgid)
 	{
+	
+	for (i=0;i<a.length ;i++ )
+		{
+		if (a[i]!="")
+			{
+			b=a[i].split(":");
+			if (b[0]==imgid)
+				{
+				selbpart=b[1];
+				selstyle=b[2];
+				selcolor=b[3];
+				seltemp=b[4];
+				i=a.length;
+				}
+			}
+		}
+
 	change_slide(3);
+
+
 	console.log("edit: "+imgid);
 	editing=imgid;
 	largeImage.src  = "http://design.ge/fresco/imgs/"+myid+"_"+imgid+".png";
@@ -651,6 +676,7 @@ function suggestme()
 		if (a[i]!="")
 			{
 			c=a[i].split(":");
+			console.log("fexis zebna: "+c[2]+" - " + selchstyle+ " and "+c[1]);
 			if (c[2]==selchstyle && c[1]==2)
 				{
 				fexfound=i;

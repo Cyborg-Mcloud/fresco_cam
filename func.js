@@ -116,7 +116,15 @@ function change_slide(newslide)
 	document.getElementById("slide_"+curslide).style.visibility="visible";
 	if (curslide==3)
 		{
+		if (editing==0)
+			{
+			largeImage.src="sample.png";
+			}
+		document.getElementById("largeImage").src=largeImage.src;
 		focussel("bpart_sel",bpartwidth, selbpart);
+		focussel("style_sel",stylewidth, selstyle);
+		focussel("feri_sel",colwidth, selcolor);
+		focussel("temp_sel",tempwidth, seltemp);
 		setTimeout("redraw();", 100);
 		}
 	else if (curslide==4)
