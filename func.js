@@ -197,6 +197,7 @@ function chgarright()
 		{
 		selgarstyle+=1;
 		focussel("garstyle_sel",garstylewidth, selgarstyle);
+		show_garderob();
 		}
 	}
 
@@ -206,6 +207,7 @@ function chgarleft()
 		{
 		selgarstyle-=1;
 		focussel("garstyle_sel",garstylewidth, selgarstyle);
+		show_garderob();
 		}
 	}
 
