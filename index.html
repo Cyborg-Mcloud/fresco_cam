@@ -316,7 +316,7 @@ function gotoedit()
 					</div>
 				</div>
 				
-				<div style='position:absolute; left:0px; top:75px; width:100%; border:1px solid red;' id='garder'>
+				<div style='position:absolute; left:0px; top:76px; width:100%; ' id='garder'>
 
 					
 				</div>
@@ -559,6 +559,18 @@ function show_garderob()
 		}
 		document.getElementById("garder").innerHTML+="</tr></table>";			
 }
+
+
+var editing=0;
+
+
+function editimg(imgid)
+	{
+	change_slide(3);
+	
+	editing=imgid;
+	largeImage.src  = "http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png";
+	}
 
 var curprog="";
 var curtemp=0;

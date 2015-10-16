@@ -114,16 +114,36 @@ if (curslide==3)
 
 function savedress()
 	{
-	var img1    = c.toDataURL("image/png");
-	url='http://design.ge/fresco/upload_dress.php?saveme=123';
-	gamehttp.open('POST',url,true);
-	gamehttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	var sendstr="color="+selcolor;
-	 sendstr+="&temp="+seltemp;
-	 sendstr+="&style="+selstyle;
-	 sendstr+="&bpart="+selbpart;
-	sendstr+="&myid="+myid;
-	 sendstr+="&img="+img1;
+	if (editing==0)
+		{
+		
+		var img1    = c.toDataURL("image/png");
+		url='http://design.ge/fresco/upload_dress.php?saveme=123';
+		gamehttp.open('POST',url,true);
+		gamehttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		var sendstr="color="+selcolor;
+		 sendstr+="&temp="+seltemp;
+		 sendstr+="&style="+selstyle;
+		 sendstr+="&bpart="+selbpart;
+		sendstr+="&myid="+myid;
+		 sendstr+="&img="+img1;
 
-	gamehttp.send(sendstr);
+		gamehttp.send(sendstr);
+		}
+	else
+		{
+		var img1= c.toDataURL("image/png");
+		url='http://design.ge/fresco/upload_dress.php?saveme=123&editid='+editing;
+		gamehttp.open('POST',url,true);
+		gamehttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		var sendstr="color="+selcolor;
+		 sendstr+="&temp="+seltemp;
+		 sendstr+="&style="+selstyle;
+		 sendstr+="&bpart="+selbpart;
+		sendstr+="&myid="+myid;
+		 sendstr+="&img="+img1;
+		 sendstr+="&editing="+editing;
+		gamehttp.send(sendstr);
+		editing=0;
+		}
 	}
