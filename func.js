@@ -63,6 +63,7 @@ function show_timer()
 	if (timvis==0)
 		{
 		document.getElementById("timer_div").style.display="block";
+		document.getElementById("timer_time").value=alarmtime;
 		timvis=1;
 		}
 	else
@@ -74,6 +75,7 @@ function show_timer()
 		var now = new Date().getTime(),
 
 		tartime=document.getElementById("timer_time").value;
+		alarmtime=tarttime;
 		tt=tartime.split(":");
 
 	    sqej = new Date(2014, 01,01,tt[0],tt[1],00,00);

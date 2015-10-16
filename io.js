@@ -30,7 +30,7 @@ function gotFileEntry(fileEntry)
 function gotFileWriter(writer) 
 	{
 	writer.write(myid+";"+uname+";"+email+";"+persid+";"+gender+";"+mylib+";");
-	console.log("saved: "+myid+";"+uname+";"+email+";"+persid+";"+gender+";"+mylib+";");
+	console.log("saved: "+myid+";"+uname+";"+email+";"+persid+";"+gender+";"+mylib+";"+alarmtime+";");
 	}
 
 function fail(error)
@@ -63,8 +63,9 @@ function readAsText(file)
 		persid=a[3];
 		gender=a[4];
 		mylib=a[5];
+		alarmtime=a[6];
 
-
+		if (alarmtime=="")	{alarmtime="08:00";}	
 		console.log("read: "+myData);
 		};
 	reader.readAsText(file);

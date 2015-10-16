@@ -72,12 +72,12 @@
 	  <param name="ios-package" value="CDVInAppBrowser" />
 
   </feature>
-
+<!--
  <feature name="LocalNotification">
         <param name="android-package" value="de.appplant.cordova.plugin.localnotification.LocalNotification"/>
         <param name="ios-package" value="APPLocalNotification"/>
     </feature>
-
+-->
 
    <feature name="SplashScreen">
 
