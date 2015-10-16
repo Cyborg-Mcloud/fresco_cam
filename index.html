@@ -559,7 +559,7 @@ function recv_ans()
 function show_garderob()
 {
 
-	var mst=
+
 
 	document.getElementById("garder").innerHTML="<table width=100% cellspacing=0 cellpadding=0>";
 
@@ -571,8 +571,12 @@ function show_garderob()
 	for (i=0;i<a.length ;i++ )
 		{
 		b=a[i].split(":");
+		console.log("garstyle: "+garstyle);
+		console.log("a: "+a[i]);
 		if (b[2]==selgarstyle)
 			{
+			console.log("movedi: "+b[0]);
+			
 			if (tabl==0)
 				{document.getElementById("garder").innerHTML+="<tr>";
 				}
@@ -584,9 +588,6 @@ function show_garderob()
 				tabl=0;
 				}
 			else {tabl=1;}
-			
-			temp[tc]=i;
-			tc++;
 			}
 		}
 					
