@@ -565,9 +565,10 @@ var editing=0;
 
 function remimg(imgid)
 	{
-	url='http://design.ge/fresco/upload_dress.php?saveme=123&DELETE='+imgid;
+	url='http://design.ge/fresco/upload_dress.php?delete='+imgid;
 	gamehttp.open('GET',url,true);
 	gamehttp.send();
+	console.log('http://design.ge/fresco/upload_dress.php?DELETE='+imgid);
 	change_slide(4);
 	}
 
