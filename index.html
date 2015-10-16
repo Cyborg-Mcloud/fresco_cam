@@ -316,7 +316,7 @@ function gotoedit()
 					</div>
 				</div>
 				
-				<div style='position:absolute; left:0px; top:54px; width:100%; border:1px solid red;' id='garder'>
+				<div style='position:absolute; left:0px; top:60px; width:100%; border:1px solid red;' id='garder'>
 
 					<table width=100% cellspacing=0 cellpadding=0>
 					<tr>
@@ -568,29 +568,34 @@ function show_garderob()
 	var temp=new Array();
 	var tc=0;
 	var tabl=0;
+				console.log("garstyle: "+selgarstyle);
 	for (i=0;i<a.length ;i++ )
 		{
-		b=a[i].split(":");
-		console.log("garstyle: "+selgarstyle);
-		console.log("a: "+a[i]);
-		if (b[2]==selgarstyle)
+		if (a[i]!="")
 			{
-			console.log("movedi: "+b[0]);
 			
-			if (tabl==0)
-				{document.getElementById("garder").innerHTML+="<tr>";
-				}
+			b=a[i].split(":");
+
+			console.log("a: "+a[i]);
+			if (b[2]==selgarstyle)
+				{
+				console.log("movedi: "+b[0]);
 				
-			document.getElementById("garder").innerHTML+="<Td width=50% height=165px ><div style='position:relative; height:165px; width:175px; overflow:hidden;'><img src='http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png' width=175px><img src='garderob_over.png' style='position:absolute; left:0px;top:0px;'></div></td>";
-			
-			if (tabl==1)
-				{document.getElementById("garder").innerHTML+="</tr>";
-				tabl=0;
+				if (tabl==0)
+					{document.getElementById("garder").innerHTML+="<tr>";
+					}
+					
+				document.getElementById("garder").innerHTML+="<Td width=50% height=165px ><div style='position:relative; height:165px; width:175px; overflow:hidden;'><img src='http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png' width=175px><img src='garderob_over.png' style='position:absolute; left:0px;top:0px;'></div></td>";
+				
+				if (tabl==1)
+					{document.getElementById("garder").innerHTML+="</tr>";
+					tabl=0;
+					}
+				else {tabl=1;}
 				}
-			else {tabl=1;}
 			}
 		}
-					
+		document.getElementById("garder").innerHTML+="</tr></table>";			
 }
 
 var curprog="";
