@@ -667,7 +667,7 @@ function suggestme()
 		if (a[i]!="")
 			{
 			b=a[i].split(":");
-			if (b[2]==selchstyle && b[1]==1 )
+			if (b[2]==selchstyle && b[1]==1 && cursug!=i)
 				{
 				temp[tc]=i;
 				tc++;
@@ -756,7 +756,7 @@ function changeshoes()
 		if (a[i]!="")
 			{
 			b=a[i].split(":");
-			if (b[2]==selchstyle && b[1]==2 )
+			if (b[2]==selchstyle && b[1]==2 && curfex!=i)
 				{
 				temp[tc]=i;
 				tc++;
