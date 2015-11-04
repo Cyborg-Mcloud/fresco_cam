@@ -1,4 +1,30 @@
 
+var cursaveimage="";
+
+function SaveImg(myimg)
+	{
+	cursaveimage=myimg;
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotfswrite_image, fail);
+	}
+
+
+function gotfswrite_image(fileSystem) 
+	{
+	fileSystem.root.getFile("dresco/imgs/"+cursaveimage, {create: true, exclusive: false}, gotFileEntry_image, fail);
+	}
+
+function gotFileEntry_image(fileEntry) 
+	{
+	fileEntry.createWriter(gotFileWriter_image, fail);
+	}
+
+
+function gotFileWriter_image(writer) 
+	{
+	writer.write(curimgtext);
+	console.log("saved image: "+cursaveimage+";");
+	}
+
 
 function WriteData()
 	{
