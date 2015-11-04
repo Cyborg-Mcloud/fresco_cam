@@ -114,6 +114,7 @@ function show_weather()
 
 function change_slide(newslide)
 	{
+	daelode(0);
 	document.getElementById("slide_"+curslide).style.visibility="hidden";
 	curslide=newslide;
 	document.getElementById("slide_"+curslide).style.visibility="visible";
@@ -153,6 +154,12 @@ function req_mylib()
 
 	}
 
+function daelode(showme)
+	{
+	if (showme==1)
+		{		document.getElementById("wait_screen").style.visibility="visible";	}
+	else {		document.getElementById("wait_screen").style.visibility="hidden";	}
+	}
 
 function downimg(murl)
 	{

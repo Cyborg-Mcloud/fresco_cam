@@ -14,28 +14,28 @@
 
    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <!--       <script type="text/javascript" src="local-notification.js"></script>-->
-	   <script type="text/javascript" charset="utf-8" src="func.js"></script>
-	   <script type="text/javascript" charset="utf-8" src="io.js"></script>
-       <script type="text/javascript" charset="utf-8" src="camera.js"></script>
-       <script type="text/javascript" charset="utf-8" src="login.js"></script>
+   <script type="text/javascript" charset="utf-8" src="func.js"></script>
+   <script type="text/javascript" charset="utf-8" src="io.js"></script>
+   <script type="text/javascript" charset="utf-8" src="camera.js"></script>
+   <script type="text/javascript" charset="utf-8" src="login.js"></script>
 
-	   <script type="text/javascript" charset="utf-8">
+   <script type="text/javascript" charset="utf-8">
 
 	var myid=0;
-	 var dataex=0;
-    document.addEventListener("deviceready",onDeviceReady,false);
+	var dataex=0;
+	document.addEventListener("deviceready",onDeviceReady,false);
 
-function onDeviceReady() 
-	{
-	
-  
-	checkIfFileExists("");
-	
-	console.log("myid="+myid);
+	function onDeviceReady() 
+		{
+		
+	  
+		checkIfFileExists("");
+		
+		console.log("myid="+myid);
 
-	pictureSource=navigator.camera.PictureSourceType;
-	destinationType=navigator.camera.DestinationType;
-	}
+		pictureSource=navigator.camera.PictureSourceType;
+		destinationType=navigator.camera.DestinationType;
+		}
 //   repeat:     String,  // Either 'secondly', 'minutely', 'hourly', 'daily', 'weekly', 'monthly' or 'yearly'
 //   date:       Date,    // This expects a date object
 // badge:      Number,  // Displays number badge to notification
@@ -139,6 +139,13 @@ input {padding:0px; width:250px; height:35px; }
 
 		</div>
 
+<!-- WAITING SCREEN -->
+
+		<div id="wait_screen" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px; z-index:9999; visibility:hidden;  opacity: 0.8; filter: alpha(opacity=80);' onclick="window.scrollTo(0, 0);">
+			<br><br><br><br><br>
+			<center><img src='url.gif'></center>		
+		</div>
+
 <!-- slide 3 - CAMERA SLIDE -->
 		<div id="slide_3" style='width:100%;height:100%; visibility:hidden; position:absolute; left:0px; top:0px;' onclick="window.scrollTo(0, 0);">
 			
@@ -233,8 +240,7 @@ input {padding:0px; width:250px; height:35px; }
 						<a href='Javascript: changeshoes();' style='display:block; vertical-align:middle;  text-align:center; position:absolute; left:310px; top:335px; z-index:80;'><img src='home_right.png'></a>
 
 					</div>		
-				
-					
+
 				</div>
 
 				<div id='mystyle' style='display:none; position:absolute; left:35px; top:80px; background:URL(round_foni.png); width:280px;  text-align:center; height:37px; z-index:81;'>

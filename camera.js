@@ -128,7 +128,7 @@ function savedress()
 		 sendstr+="&bpart="+selbpart;
 		sendstr+="&myid="+myid;
 		 sendstr+="&img="+img1;
-
+		daelode(1);
 		gamehttp.send(sendstr);
 		}
 	else
@@ -146,6 +146,7 @@ function savedress()
 		sendstr+="&myid="+myid;
 		 sendstr+="&img="+img1;
 		 sendstr+="&editing="+editing;
+		daelode(1);
 		gamehttp.send(sendstr);
 		editing=0;
 		}
