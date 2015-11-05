@@ -487,7 +487,7 @@ function recv_ans()
 		c_recv=gamehttp.responseText;
 		if (c_recv!="")
 			{
-			if (deleting==1)
+			if (deleting==1 || c_recv=="DELETED")
 				{
 				deleting=0;
 				daelode(0);
