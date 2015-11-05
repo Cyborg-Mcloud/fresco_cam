@@ -487,7 +487,14 @@ function recv_ans()
 		c_recv=gamehttp.responseText;
 		if (c_recv!="")
 			{
-			if (c_recv.search("<yweather:condition")>-1)
+			if (deleting==1)
+				{
+				deleting=0;
+				daelode(0);
+					change_slide(4);
+				}
+
+			else if (c_recv.search("<yweather:condition")>-1)
 				{
 				set_weather(c_recv);
 				}
@@ -578,11 +585,11 @@ function show_garderob()
 			
 				if (b[1]==2)
 					{
-					document.getElementById("garder").innerHTML+="<Td width=50% height=165px ><div style='float:left; position:relative; height:165px; width:175px; overflow:hidden;'><img  onClick='Javascript: editimg("+b[0]+");'  src='http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png' width=175px><img src='garderob_over.png' style='position:absolute; left:0px;top:0px;'><a href='Javascript: remimg("+b[0]+"); ' style='display:block; z-index:80; position:absolute; left:20px; bottom:5px;'><img height=32px src='remove.png'></a><a href='Javascript: editimg("+b[0]+"); ' style='display:block; z-index:80; position:absolute; right:20px; bottom:5px;'><img height=32px  src='edit.png'><img height=30px src='shoes.png' style='display:block; z-index:80; position:absolute; right:50px; bottom:5px;'></a></div></td>";
+					document.getElementById("garder").innerHTML+="<Td width=50% height=165px ><div style='float:left; position:relative; height:165px; width:175px; overflow:hidden;'><img src='http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png' width=175px><img src='garderob_over.png' style='position:absolute; left:0px;top:0px;'><a onClick='Javascript: editimg("+b[0]+");' style='position:absolute; left:5px; top:5px; width:165px; height:120px; border:1px solid red; display:block;'></a><a href='Javascript: remimg("+b[0]+"); ' style='display:block; z-index:80; position:absolute; left:20px; bottom:5px;'><img height=32px src='remove.png'></a><a href='Javascript: editimg("+b[0]+"); ' style='display:block; z-index:80; position:absolute; right:20px; bottom:5px;'><img height=32px  src='edit.png'><img height=30px src='shoes.png' style='display:block; z-index:80; position:absolute; right:50px; bottom:5px;'></a></div></td>";
 					}
 				else
 					{
-					document.getElementById("garder").innerHTML+="<Td width=50% height=165px ><div style='float:left; position:relative; height:165px; width:175px; overflow:hidden;' ><img onClick='Javascript: editimg("+b[0]+"); ' src='http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png' width=175px><img src='garderob_over.png' style='position:absolute; left:0px;top:0px;'><a href='Javascript: remimg("+b[0]+"); ' style='display:block; z-index:80; position:absolute; left:20px; bottom:5px;'><img height=32px src='remove.png'></a><a href='Javascript: editimg("+b[0]+"); ' style='display:block; z-index:80; position:absolute; right:20px; bottom:5px;'><img height=32px  src='edit.png'></a></div></td>";
+					document.getElementById("garder").innerHTML+="<Td width=50% height=165px ><div style='float:left; position:relative; height:165px; width:175px; overflow:hidden;'><img src='http://design.ge/fresco/imgs/"+myid+"_"+b[0]+".png' width=175px><img src='garderob_over.png' style='position:absolute; left:0px;top:0px;'><a onClick='Javascript: editimg("+b[0]+");' style='position:absolute; left:5px; top:5px; width:165px; height:120px; border:1px solid red; display:block;'></a><a href='Javascript: remimg("+b[0]+"); ' style='display:block; z-index:80; position:absolute; left:20px; bottom:5px;'><img height=32px src='remove.png'></a><a href='Javascript: editimg("+b[0]+"); ' style='display:block; z-index:80; position:absolute; right:20px; bottom:5px;'><img height=32px  src='edit.png'></a></div></td>";
 					}
 
 				document.getElementById("garder").innerHTML+="</a></div></td>";
@@ -600,14 +607,17 @@ function show_garderob()
 
 
 var editing=0;
+var deleting=0;
 
 function remimg(imgid)
 	{
+		deleting=1;
 	url='http://design.ge/fresco/upload_dress.php?delete='+imgid;
+	daelode(1);
 	gamehttp.open('GET',url,true);
 	gamehttp.send();
 	console.log('http://design.ge/fresco/upload_dress.php?DELETE='+imgid);
-	change_slide(4);
+//	change_slide(4);
 	}
 
 function editimg(imgid)
