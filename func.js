@@ -2,11 +2,11 @@ var garstylewidth=110;
 var chstylewidth=110;
 var bpartwidth=130;
 var stylewidth=110;
-var colwidth=120;
+var colwidth=130;
 var tempwidth=90;
 
 
-var maxcolor=16;
+var maxcolor=17;
 var maxtemp=5;
 var maxstyle=4;
 var maxbpart=2;
