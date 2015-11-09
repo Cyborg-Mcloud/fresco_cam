@@ -276,7 +276,7 @@ input {padding:0px; width:250px; height:35px; }
 				
 			
 
-				<div id="weather_show" style='background:URL(weather_pop.png);position:absolute; left:10px; top:425px; width:150px; height:70px; display:block; z-index:91; text-align:center; display:none; color:gray; padding-top:10px;'>20 C<br>Mostly Cloudy</div>
+				<div id="weather_show" style='background:URL(weather_pop.png);position:absolute; left:10px; top:425px; width:150px; height:70px; display:block; z-index:91; text-align:center; display:none; color:gray; padding-top:10px;'>20 <img src='cels_2.png'><br>Mostly Cloudy</div>
 
 				<div id="timer_div" style='background:URL(timer_pop.png); position:absolute; left:200px; top:425px; width:150px; height:80px; display:block; z-index:92; display:none; color:gray;'><input type=text size=5 value="08:00" id="timer_time" style='margin-left:20px; margin-top:15px; text-align:center; color:gray; font-size:16px; width:60px;' onblur="show_timer();"></div>
 
@@ -394,13 +394,29 @@ function gotoedit()
 							
 								<div style='position:relative; width:210px; height:33px; margin:0px padding:0px; overflow:hidden;  '>
 									<div id='feri_sel' style='position:absolute; left:0px; top:0px;  '>
-										<table border=0 cellspacing=0 cellpadding=0 width=600px>
+										<table border=0 cellspacing=0 cellpadding=0 width="1920px">
 											<tr>
-											<td valign=middle width=0px align=center>შავი</td>
-											<td width=100px align=center  valign=middle>თეთრი</td>
-											<td width=100px align=center valign=middle>წითელი</td>
-											<td width=100px align=center valign=middle>ლურჯი</td>
-											<td width=100px align=center valign=middle>მწვანე</td>
+											<td valign=middle width=120px align=center>შავი</td>
+											<td width=120px align=center  valign=middle>თეთრი</td>
+											<td width=120px align=center valign=middle>წითელი</td>
+											<td width=120px align=center valign=middle>ლურჯი</td>
+											<td width=120px align=center valign=middle>მწვანე</td>
+
+											<td width=120px align=center valign=middle>ვარდისფერი</td>
+											<td width=120px align=center valign=middle>იასამნისფერი</td>
+											<td width=120px align=center valign=middle>ყვითელი</td>
+											<td width=120px align=center valign=middle>ნარინჯისფერი</td>
+											<td width=120px align=center valign=middle>ცისფერი</td>
+											<td width=120px align=center valign=middle>ნაცრისფერი</td>
+											<td width=120px align=center valign=middle>ყავისფერი</td>
+
+											<td width=120px align=center valign=middle>შინდისფერი</td>
+											<td width=120px align=center valign=middle>ოქროსფერი</td>
+											<td width=120px align=center valign=middle>ვერცხლისფერი</td>
+											<td width=120px align=center valign=middle>კრემისფერი</td>
+
+
+
 											<td width=100px align=center valign=middle>სხვა</td>
 
 											</tr>
@@ -567,7 +583,7 @@ function show_garderob()
 	var tc=0;
 	var tabl=0;
 				console.log("garstyle: "+selgarstyle);
-	for (i=0;i<a.length ;i++ )
+	for (i=a.length-1;i>=0 ;i-- )
 		{
 		if (a[i]!="")
 			{
@@ -829,7 +845,7 @@ function set_weather(mstr)
 	curprog=curprog.replace("/","");
 	curprog=curprog.replace(" ","_");
 	
-	document.getElementById("weather_show").innerHTML="<table width=100%><tr><Td height=50px valign=middle align=center><img src='"+curprog+".png'></td><td align=center valign=middle style='font-size:18px;'>"+curtemp+" C</td></tr></table>";
+	document.getElementById("weather_show").innerHTML="<table width=100%><tr><Td height=50px valign=middle align=center><img src='"+curprog+".png'></td><td align=right valign=middle ><img src='cels_1.png'></td><td  align=center valign=middle style='font-size:18px;'> "+curtemp+" </td><td align=left valign=middle ><img src='cels_2.png'></td></tr></table>";
 
 	}
 
