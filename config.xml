@@ -116,7 +116,7 @@
 <gap:plugin name="org.apache.cordova.file-transfer" />
 <gap:plugin name="org.apache.cordova.camera" />
 <gap:plugin name="org.apache.cordova.network-information" />
-<gap:plugin name="de.appplant.cordova.plugin.local-notification" />
+<gap:plugin name="de.appplant.cordova.plugin.local-notification" spec="0.8.1" source="pgb" />
 <gap:plugin name="cordova-plugin-inappbrowser"  source="npm" />
 <gap:plugin name="cordova-plugin-whitelist" source="npm" />
   <gap:splash src="splash.png" />
