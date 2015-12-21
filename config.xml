@@ -120,7 +120,12 @@
 <gap:plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" spec="0.8.2" source="pgb" />
 <gap:plugin name="cordova-plugin-inappbrowser"  source="npm" />
 <gap:plugin name="cordova-plugin-whitelist" source="npm" />
-  <gap:splash src="splash.png" />
-    <gap:splash src="splash.png"  width="640" height="960" />
+<gap:splash src="splash.png" />
+<gap:splash src="splash.png"  width="640" height="960" />
+
+<gap:splash src="Default.png" gap:platform="ios" width="640" height="1136" />
+<gap:splash src="Default@2x.png" gap:platform="ios" width="640" height="1136" />
+<gap:splash src="Default-568h@2x.png" gap:platform="ios" width="640" height="1136" />
+
 
 </widget>
