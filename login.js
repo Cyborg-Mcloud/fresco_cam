@@ -8,15 +8,15 @@ function regme()
 	{
 	uname=document.getElementById("uname").value;
 	email=document.getElementById("email").value;
-	persid=document.getElementById("persid").value;
+//	persid=document.getElementById("persid").value;
 	var mg=document.getElementById("myfemale");
 	gender=1;
 	if (mg.checked==true)
 		{gender=1;}	
 	else
 		{gender=2;}
-
-	if (uname=="" || email=="" || persid=="")
+persid="";
+	if (uname=="" || email=="" )
 		{
 		alert("გთხოვთ შეიყვანოთ სახელი, ელ.ფოსტა და პირადი ნომერი");
 		}
