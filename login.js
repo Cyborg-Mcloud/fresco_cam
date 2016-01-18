@@ -7,7 +7,7 @@ var persid;
 function regme()
 	{
 	uname=document.getElementById("uname").value;
-	email=document.getElementById("email").value;
+//	email=document.getElementById("email").value;
 //	persid=document.getElementById("persid").value;
 	var mg=document.getElementById("myfemale");
 	gender=1;
@@ -16,9 +16,10 @@ function regme()
 	else
 		{gender=2;}
 persid="";
-	if (uname=="" || email=="" )
+email="";
+	if (uname=="" )
 		{
-		alert("გთხოვთ შეიყვანოთ სახელი, ელ.ფოსტა და პირადი ნომერი");
+		alert("გთხოვთ შეიყვანოთ სახელი");
 		}
 	else
 		{
