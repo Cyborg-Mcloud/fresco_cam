@@ -78,12 +78,12 @@ if (curslide==3)
 	console.log("re-draw");
 	if (imgtaken==1)
 		{	
-			c.width=c.width;
-		ctx.save(); 
+		//	c.width=c.width;
+		//ctx.save(); 
 		ctx.translate(355, 0); 
 		ctx.rotate(myrot); 
 		ctx.drawImage(loadedimage, 0, 0, 600, 355); 		
-		ctx.restore();
+		//ctx.restore();
 		document.getElementById("rotator_but").style.visibility="visible";
 		}
 	else
