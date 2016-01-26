@@ -79,11 +79,19 @@ if (curslide==3)
 	if (imgtaken==1)
 		{	
 		//	c.width=c.width;
-		//ctx.save(); 
+		if (myrot>0)
+		{
+		
+		ctx.save(); 
 		ctx.translate(355, 0); 
 		ctx.rotate(myrot); 
+		}
+
 		ctx.drawImage(loadedimage, 0, 0, 600, 355); 		
-		//ctx.restore();
+		if (myrot>0)
+		{
+		ctx.restore();
+		}
 		document.getElementById("rotator_but").style.visibility="visible";
 		}
 	else
