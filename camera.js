@@ -1,6 +1,5 @@
-   var pictureSource;   // picture source
-    var destinationType; // sets the format of returned value
-
+var  pictureSource=navigator.camera.PictureSourceType;
+var	destinationType=navigator.camera.DestinationType;
 
 var imgtaken=0;
 
@@ -31,7 +30,7 @@ function onPhotoURISuccess(imageURI)
 //      largeImage.style.display = 'block';
 	largeImage.src = imageURI;
 	imgtaken=1;
-	console.log("image taken");
+	console.log("image loaded");
 	showprops();
 	
     }
@@ -88,40 +87,44 @@ if (curslide==3)
 		ctx.rotate(myrot); 
 		ctx.drawImage(largeImage, 0, 0, 600, 355); 		
 		ctx.restore();
-		document.getElementById("rotator_but").style.visibility="visible";
+		//document.getElementById("rotator_but").style.visibility="visible";
 		}
 	else
 		{	ctx.drawImage(largeImage, 0, 0);
-			document.getElementById("rotator_but").style.visibility="hidden";}
+		//	document.getElementById("rotator_but").style.visibility="hidden";
+		}
 	
 	setTimeout("redraw();", 1000);
 	}
 }
 
 
-    function capturePhoto() {
+    function capturePhoto()
+		{
 //onPhotoDataSuccess();
 //console.log("ager");
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: destinationType.DATA_URL });
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 100, destinationType: destinationType.DATA_URL });
+
+	//navigator.camera.getPicture(onPhotoURISuccess, photoOnFail, { quality: 50, destinationType: destinationType.FILE_URI });
     }
 
     function capturePhotoEdit() {
     
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 100, allowEdit: true,
         destinationType: destinationType.DATA_URL });
     }
 
 
     function getPhoto(source) {
 
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 100,
         destinationType: destinationType.FILE_URI,
         sourceType: source });
     }
 
 
     function onFail(message) {
-      alert('Failed because: ' + message);
+      console.log('Failed because: ' + message);
     }
 
 
