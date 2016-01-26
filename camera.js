@@ -6,8 +6,8 @@ function onPhotoDataSuccess(imageData)
 	{
  // console.log(imageData);
  //  largeImage.style.display = 'block';
- loadedimage=new Image();
-   loadedimage.src  = "data:image/jpeg;base64," + imageData;
+ largeImage=new Image();
+   largeImage.src  = "data:image/jpeg;base64," + imageData;
    document.getElementById("preview").src="data:image/jpeg;base64," + imageData;
 	imgtaken=1;
 	console.log("image taken with camera");
@@ -22,8 +22,8 @@ function onPhotoURISuccess(imageURI)
     console.log(imageURI);
 
 //      largeImage.style.display = 'block';
- loadedimage=new Image();
-	loadedimage.src = imageURI;
+ largeImage=new Image();
+	largeImage.src = imageURI;
 	   document.getElementById("preview").src=imageURI;
 	imgtaken=1;
 	console.log("image loaded");
@@ -31,7 +31,7 @@ function onPhotoURISuccess(imageURI)
 	
     }
 
-var myrot=0; //3.14/2;
+var myrot=3.14/2;
 
 function rotateme()
 	{
@@ -58,9 +58,9 @@ function rotateme()
 		ctx.rotate(myrot); 
 
 		if (myrot==3.14/2 || myrot==(3.14+3.14/2))
-			{	ctx.drawImage(loadedimage, 0, 0, 600, 355); }
+			{	ctx.drawImage(largeImage, 0, 0, 600, 355); }
 		else
-			{ctx.drawImage(loadedimage, 0, 0, 355, 600); }
+			{ctx.drawImage(largeImage, 0, 0, 355, 600); }
 
 			
 		ctx.restore();
@@ -87,7 +87,7 @@ if (curslide==3)
 		ctx.rotate(myrot); 
 		}
 
-		ctx.drawImage(loadedimage, 0, 0, 600, 355); 		
+		ctx.drawImage(largeImage, 0, 0, 600, 355); 		
 		if (myrot>0)
 		{
 		ctx.restore();

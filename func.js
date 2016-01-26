@@ -137,6 +137,7 @@ function show_weather()
 
 function change_slide(newslide)
 	{
+	imgtaken=0;
 	daelode(0);
 	document.getElementById("slide_"+curslide).style.visibility="hidden";
 	curslide=newslide;
@@ -151,6 +152,11 @@ function change_slide(newslide)
 		if (editing==0)
 			{
 			largeImage.src="sample.png";
+			myrot=3.14/2;
+			}
+		else
+			{
+			myrot=0;
 			}
 		document.getElementById("largeImage").src=largeImage.src;
 
