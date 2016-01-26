@@ -79,6 +79,7 @@ function redraw()
 {
 if (curslide==3)
 	{
+	console.log("re-draw");
 	if (imgtaken==1)
 		{	
 		ctx.save(); 
@@ -86,9 +87,11 @@ if (curslide==3)
 		ctx.rotate(myrot); 
 		ctx.drawImage(largeImage, 0, 0, 600, 355); 		
 		ctx.restore();
+		document.getElementById("rotator_but").style.visibility="visible";
 		}
 	else
-		{	ctx.drawImage(largeImage, 0, 0);}
+		{	ctx.drawImage(largeImage, 0, 0);
+			document.getElementById("rotator_but").style.visibility="hidden";}
 	
 	setTimeout("redraw();", 1000);
 	}

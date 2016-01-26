@@ -87,7 +87,7 @@ user-select: none;
 	</style>
   </head>
   <body>
-	  <div style='height:100%;  display:block; overflow:hidden; width:100%;'>
+	  <div style='height:100%;  display:block; overflow:hidden; width:100%; border:1px solid red;'>
 	
 		<div id="slide_1" style='width:100%;height:100%; visibility:visible; position:absolute; left:0px; top:0px;' onclick="window.scrollTo(0, 0);">
 			<img src='slide_1.png' width='100%'>
@@ -202,7 +202,7 @@ user-select: none;
 					</tr></table>
 			</div>
 
-			<a href="Javascript: rotateme();" style='position:absolute; right:20px; top:80px;   '><img src='rotate.png'></a>		
+			<a href="Javascript: rotateme();" style='position:absolute; right:20px; top:80px; visibility:hidden;' id='rotator_but'><img src='rotate.png'></a>		
 
 			<img style="display:none;" id="largeImage" src="" width=100% src="sample.png" />
 
@@ -868,8 +868,8 @@ function set_weather(mstr)
 	document.getElementById("weather_show").innerHTML="<table width=100%><tr><Td height=50px valign=middle align=center><img src='"+curprog+".png'></td><td align=right valign=middle ><img src='cels_1.png'></td><td  align=center valign=middle style='font-size:18px;'> "+curtemp+" </td><td align=left valign=middle ><img src='cels_2.png'></td></tr></table>";
 
 	}
-newstartfunc();
-//setTimeout("startfunc();",1000);
+//newstartfunc();
+setTimeout("startfunc();",1000);
 setTimeout("get_weather();",1000);
 </script>
   </body>
