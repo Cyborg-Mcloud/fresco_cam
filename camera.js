@@ -35,35 +35,44 @@ function onPhotoURISuccess(imageURI)
 	
     }
 
-var myrot=3.14/2;
+var myrot=6.28; //3.14/2;
 
 function rotateme()
 	{
-	ctx.clearRect(0, 0, 355, 600);
-	myrot+=3.14/2;
+	if (imgtaken==1)
+		{
 
 
-	console.log(myrot);
-	ctx.save(); 
-	if (myrot==3.14/2)
-		{ctx.translate(355, 0);}
-	else if  (myrot==3.14)
-		{ctx.translate(355, 600);}
-	else if (myrot==3.14+3.14/2)
-		{ctx.translate(0, 600);}
-	else if (myrot==6.28)
-		{myrot=0;
-		ctx.translate(0, 0);}
+		ctx.clearRect(0, 0, 355, 600);
+		myrot+=3.14/2;
 
-	ctx.rotate(myrot); 
 
-	if (myrot==3.14/2 || myrot==(3.14+3.14/2))
-		{	ctx.drawImage(largeImage, 0, 0, 600, 355); }
+		console.log("rotated:"+myrot);
+		ctx.save(); 
+		if (myrot==3.14/2)
+			{ctx.translate(355, 0);}
+		else if  (myrot==3.14)
+			{ctx.translate(355, 600);}
+		else if (myrot==3.14+3.14/2)
+			{ctx.translate(0, 600);}
+		else if (myrot==6.28)
+			{myrot=0;
+			ctx.translate(0, 0);}
+
+		ctx.rotate(myrot); 
+
+		if (myrot==3.14/2 || myrot==(3.14+3.14/2))
+			{	ctx.drawImage(largeImage, 0, 0, 600, 355); }
+		else
+			{ctx.drawImage(largeImage, 0, 0, 355, 600); }
+
+			
+		ctx.restore();
+		}
 	else
-		{ctx.drawImage(largeImage, 0, 0, 355, 600); }
-
-		
-	ctx.restore();
+		{
+		myrot=6.28;
+		}
 	}
 
 function redraw()
