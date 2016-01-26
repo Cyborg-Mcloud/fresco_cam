@@ -35,8 +35,8 @@ var myrot=6.28; //3.14/2;
 
 function rotateme()
 	{
-//	if (imgtaken==1)
-//		{
+	if (imgtaken==1)
+		{
 
 
 		ctx.clearRect(0, 0, 355, 600);
@@ -64,31 +64,31 @@ function rotateme()
 
 			
 		ctx.restore();
-//		}
-//	else
-//		{
-//		myrot=6.28;
-//		}
+		}
+	else
+		{
+		myrot=6.28;
+		}
 	}
 
 function redraw()
 {
 if (curslide==3)
 	{
-//	console.log("re-draw");
+	console.log("re-draw");
 	if (imgtaken==1)
 		{	
 			c.width=c.width;
-		//ctx.save(); 
-		//ctx.translate(355, 0); 
-		//ctx.rotate(myrot); 
+		ctx.save(); 
+		ctx.translate(355, 0); 
+		ctx.rotate(myrot); 
 		ctx.drawImage(loadedimage, 0, 0, 600, 355); 		
-		//ctx.restore();
-		//document.getElementById("rotator_but").style.visibility="visible";
+		ctx.restore();
+		document.getElementById("rotator_but").style.visibility="visible";
 		}
 	else
 		{	ctx.drawImage(largeImage, 0, 0);
-		//	document.getElementById("rotator_but").style.visibility="hidden";
+			document.getElementById("rotator_but").style.visibility="hidden";
 		}
 	
 	setTimeout("redraw();", 1000);
