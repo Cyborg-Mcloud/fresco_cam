@@ -31,7 +31,7 @@ function onPhotoURISuccess(imageURI)
 	
     }
 
-var myrot=6.28; //3.14/2;
+var myrot=0; //3.14/2;
 
 function rotateme()
 	{
