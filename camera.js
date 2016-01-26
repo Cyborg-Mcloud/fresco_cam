@@ -1,12 +1,4 @@
-var  pictureSource=navigator.camera.PictureSourceType;
-var	destinationType=navigator.camera.DestinationType;
 
-var imgtaken=0;
-
-
-var largeImage=new Image();
-largeImage.src="sample.png";
-   
 
 
 
