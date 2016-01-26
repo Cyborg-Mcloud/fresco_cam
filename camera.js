@@ -24,7 +24,8 @@ function onPhotoDataSuccess(imageData)
  
 function onPhotoURISuccess(imageURI) 
 	{
-		largeImage.src="sample.png";
+//		largeImage.src="sample.png";
+imageURI=imageURI.replace("%3A",":");
     console.log(imageURI);
 
 //      largeImage.style.display = 'block';
