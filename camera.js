@@ -80,18 +80,22 @@ if (curslide==3)
 		{	
 		//	c.width=c.width;
 		if (myrot>0)
-		{
-		
-		ctx.save(); 
-		ctx.translate(355, 0); 
-		ctx.rotate(myrot); 
-		}
+			{
+			
+			ctx.save(); 
+			ctx.translate(355, 0); 
+			ctx.rotate(myrot); 
+			ctx.drawImage(largeImage, 0, 0, 600, 355); 	
+			ctx.restore();
+			}
+		else
+			{
+			ctx.drawImage(largeImage, 0, 0, 355, 600); 
+			}
+			
 
-		ctx.drawImage(largeImage, 0, 0, 600, 355); 		
-		if (myrot>0)
-		{
-		ctx.restore();
-		}
+	
+
 		document.getElementById("rotator_but").style.visibility="visible";
 		}
 	else
