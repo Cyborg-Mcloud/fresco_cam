@@ -95,23 +95,23 @@ if (curslide==3)
 		{
 //onPhotoDataSuccess();
 //console.log("ager");
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 100, destinationType: destinationType.DATA_URL });
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, destinationType: destinationType.DATA_URL });
 
 	//navigator.camera.getPicture(onPhotoURISuccess, photoOnFail, { quality: 50, destinationType: destinationType.FILE_URI });
     }
 
     function capturePhotoEdit() {
     
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 100, allowEdit: true,
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
         destinationType: destinationType.DATA_URL });
     }
 
 
     function getPhoto(source) {
 
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 100,
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 20,
         destinationType: destinationType.FILE_URI,
-        sourceType: source });
+        sourceType: pictureSource.PHOTOLIBRARY });
     }
 
 
