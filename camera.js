@@ -76,6 +76,7 @@ if (curslide==3)
 //	console.log("re-draw");
 	if (imgtaken==1)
 		{	
+			c.width=c.width;
 		ctx.save(); 
 		ctx.translate(355, 0); 
 		ctx.rotate(myrot); 
