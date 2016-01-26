@@ -17,7 +17,7 @@ function onPhotoDataSuccess(imageData)
  //  largeImage.style.display = 'block';
    largeImage.src  = "data:image/jpeg;base64," + imageData;
 	imgtaken=1;
-	console.log("drawing");
+	console.log("image taken");
 	showprops();
 	}
 
@@ -25,7 +25,7 @@ function onPhotoDataSuccess(imageData)
 function onPhotoURISuccess(imageURI) 
 	{
 //		largeImage.src="sample.png";
-imageURI=imageURI.replace("%3A",":");
+//imageURI=imageURI.replace("%3A",":");
     console.log(imageURI);
 
 //      largeImage.style.display = 'block';
@@ -40,8 +40,8 @@ var myrot=6.28; //3.14/2;
 
 function rotateme()
 	{
-	if (imgtaken==1)
-		{
+//	if (imgtaken==1)
+//		{
 
 
 		ctx.clearRect(0, 0, 355, 600);
@@ -69,18 +69,18 @@ function rotateme()
 
 			
 		ctx.restore();
-		}
-	else
-		{
-		myrot=6.28;
-		}
+//		}
+//	else
+//		{
+//		myrot=6.28;
+//		}
 	}
 
 function redraw()
 {
 if (curslide==3)
 	{
-	console.log("re-draw");
+//	console.log("re-draw");
 	if (imgtaken==1)
 		{	
 		ctx.save(); 
