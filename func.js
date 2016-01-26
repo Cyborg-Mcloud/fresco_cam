@@ -143,6 +143,11 @@ function change_slide(newslide)
 	document.getElementById("slide_"+curslide).style.visibility="visible";
 	if (curslide==3)
 		{
+
+		pictureSource=navigator.camera.PictureSourceType;
+		destinationType=navigator.camera.DestinationType;
+
+
 		if (editing==0)
 			{
 			largeImage.src="sample.png";
