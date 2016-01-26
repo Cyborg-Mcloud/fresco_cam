@@ -24,13 +24,14 @@ function onPhotoDataSuccess(imageData)
  
 function onPhotoURISuccess(imageURI) 
 	{
+		largeImage.src="sample.png";
     console.log(imageURI);
 
 //      largeImage.style.display = 'block';
 	largeImage.src = imageURI;
 	imgtaken=1;
 	console.log("image taken");
-		showprops();
+	showprops();
 	
     }
 

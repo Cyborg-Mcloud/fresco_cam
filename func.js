@@ -21,6 +21,29 @@ var seltemp=1;
 var selchstyle=1;
 
 
+function newstartfunc()
+{
+	timecounter=4;
+console.log("dataex: "+dataex);
+if (dataex==0)
+	{
+	WriteData();
+	}	
+ReadData();
+
+
+if (myid==0)
+	{
+	console.log("first start");
+	change_slide(2);
+	}
+else
+	{
+	console.log("changing slide");
+	change_slide(4);
+	}
+}
+
 
 function startfunc()
 	{

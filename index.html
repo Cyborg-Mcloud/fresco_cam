@@ -6,7 +6,7 @@
 
 	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	 <!--user-scalable=no,-->
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=0.1,  minimal-ui">
+	<meta name="viewport" content="width=600; initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=0.1,  minimal-ui">
 
 	<link rel="apple-touch-icon" href="icon.png">
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -849,8 +849,8 @@ function set_weather(mstr)
 	document.getElementById("weather_show").innerHTML="<table width=100%><tr><Td height=50px valign=middle align=center><img src='"+curprog+".png'></td><td align=right valign=middle ><img src='cels_1.png'></td><td  align=center valign=middle style='font-size:18px;'> "+curtemp+" </td><td align=left valign=middle ><img src='cels_2.png'></td></tr></table>";
 
 	}
-
-setTimeout("startfunc();",1000);
+newstartfunc();
+//setTimeout("startfunc();",1000);
 setTimeout("get_weather();",1000);
 </script>
   </body>
