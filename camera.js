@@ -8,7 +8,7 @@ function onPhotoDataSuccess(imageData)
  //  largeImage.style.display = 'block';
    largeImage.src  = "data:image/jpeg;base64," + imageData;
 	imgtaken=1;
-	console.log("image taken");
+	console.log("image taken" + imageData);
 	showprops();
 	}
 
