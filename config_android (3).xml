@@ -2,10 +2,10 @@
 
 <widget xmlns     = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.fresco.dresco"
-	    versionCode="73" 
-        version   = "1.2.2"
-		package="com.fresco.dresco"
+        id        = "com.designge.dresco"
+	    versionCode="74" 
+        version   = "1.2.3"
+	package="com.designge.dresco"
 		>
     <name>Dresco</name>
 	<icon src="icon.png" />
@@ -55,8 +55,8 @@
 
     </plugins>
 	<feature name="App">
-	  <param name="android-package" value="com.fresco.dresco"/>
-	  <param name="ios-package" value="com.fresco.dresco"/>
+	  <param name="android-package" value="com.designge.dresco"/>
+	  <param name="ios-package" value="com.designge.dresco"/>
 	</feature>
 
     <feature name="Camera">
